@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Harvey
+Comment=Calculate and visualize color contrast
+Exec=com.github.danrabbit.harvey
+Icon=com.github.danrabbit.harvey
+Keywords=contrast;color;
+Terminal=false
+Type=Application
+StartupNotify=true
+Categories=Development;Graphics;Utility;
