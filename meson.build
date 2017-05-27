@@ -29,6 +29,7 @@ m_dep = cc.find_library('m', required : false)
 executable(
     meson.project_name(),
     'src/Application.vala',
+    'src/GradeLabel.vala',
     'src/MainWindow.vala',
     asresources,
     c_args: c_args,

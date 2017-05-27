@@ -23,12 +23,16 @@ public class MainWindow : Gtk.Window {
         @define-color colorBackground %s;
 
         .results {
-            transition: all 600ms ease-in-out;
+            transition: all 250ms ease-in-out;
         }
     """;
 
     private Gdk.RGBA gdk_color;
+    private Gtk.Entry bg_entry;
+    private Gtk.Entry fg_entry;
     private Gtk.Label results_label;
+    private GradeLabel aa_level;
+    private GradeLabel aaa_level;
 
     public MainWindow (Gtk.Application application) {
         Object (application: application,
@@ -39,19 +43,11 @@ public class MainWindow : Gtk.Window {
     }
 
     construct {
-        var fg_entry = new Gtk.Entry ();
+        fg_entry = new Gtk.Entry ();
         fg_entry.placeholder_text = _("Foreground Color");
-        fg_entry.text = "red";
 
-        var bg_entry = new Gtk.Entry ();
+        bg_entry = new Gtk.Entry ();
         bg_entry.placeholder_text = _("Background Color");
-        bg_entry.text = "#fff";
-
-        results_label = new Gtk.Label ("Lorem Ipsum");
-        results_label.expand = true;
-        results_label.get_style_context ().add_class ("h1");
-        results_label.valign = Gtk.Align.CENTER;
-        results_label.halign = Gtk.Align.CENTER;
 
         var input_grid = new Gtk.Grid ();
         input_grid.margin = 12;
@@ -59,10 +55,25 @@ public class MainWindow : Gtk.Window {
         input_grid.attach (fg_entry, 0, 0, 1, 1);
         input_grid.attach (bg_entry, 0, 1, 1, 1);
 
+        results_label = new Gtk.Label ("12:1");
+        results_label.expand = true;
+        results_label.get_style_context ().add_class ("h1");
+        results_label.selectable = true;
+        results_label.valign = Gtk.Align.CENTER;
+        results_label.halign = Gtk.Align.CENTER;
+
+        aa_level = new GradeLabel ("WCAG AA");
+        aa_level.halign = Gtk.Align.CENTER;
+
+        aaa_level = new GradeLabel ("WCAG AAA");
+        aaa_level.halign = Gtk.Align.CENTER;
+
         var results_grid = new Gtk.Grid ();
-        results_grid.expand = true;
+        results_grid.row_spacing = 12;
         results_grid.get_style_context ().add_class ("results");
-        results_grid.add (results_label);
+        results_grid.attach (results_label, 0, 0, 2, 1);
+        results_grid.attach (aa_level, 0, 1, 1, 1);
+        results_grid.attach (aaa_level, 1, 1, 1, 1);
 
         var grid = new Gtk.Grid ();
         grid.add (input_grid);
@@ -73,14 +84,18 @@ public class MainWindow : Gtk.Window {
         show_all ();
 
         fg_entry.changed.connect (() => {
-            style_results_pane (fg_entry.text, bg_entry.text);
+            on_entry_changed ();
         });
 
         bg_entry.changed.connect (() => {
-            style_results_pane (fg_entry.text, bg_entry.text);
+            on_entry_changed ();
         });
+    }
 
-        style_results_pane (fg_entry.text, bg_entry.text);
+    private void on_entry_changed () {
+        if (fg_entry.text.length > 2 && bg_entry.text.length > 2) {
+            style_results_pane (fg_entry.text, bg_entry.text);
+        }
     }
 
     private void style_results_pane (string fg_color, string bg_color) {
@@ -91,7 +106,7 @@ public class MainWindow : Gtk.Window {
 
                 Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
             } catch (GLib.Error e) {
-                critical (e.message);
+                return;
             }
 
             gdk_color.parse (fg_color);
@@ -108,7 +123,20 @@ public class MainWindow : Gtk.Window {
                 contrast_ratio = (pango_fg_luminance + 0.05) / (pango_bg_luminance + 0.05);
             }
 
-            results_label.label = "%f".printf (contrast_ratio);          
+            results_label.label = "%f:1".printf (contrast_ratio);
+
+            if (contrast_ratio >= 4.5) {
+                aa_level.pass = true;
+            } else {
+                aa_level.pass = false;
+            }
+
+            if (contrast_ratio >= 7) {
+                aaa_level.pass = true;
+            } else {
+                aaa_level.pass = false;
+            }
+
     }
 
     private double get_luminance (Gdk.RGBA color) {
