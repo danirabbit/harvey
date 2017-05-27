@@ -17,8 +17,16 @@
 * Boston, MA 02110-1301 USA
 */
 
+.results {
+    background-color: @colorBackground;
+    color: @colorForeground;
+    border-bottom-right-radius: 3px;
+    border-left: solid 1px shade (@colorBackground, 0.8);
+    box-shadow: inset 1px 0 0 0 shade (@colorBackground, 1.07);
+}
+
 .titlebar {
-    background-color: @bg_color;
+ /*   background-color: @bg_color;
     background-image: none;
-    border: none;
+    border: none;*/
 }
