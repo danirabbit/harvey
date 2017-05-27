@@ -13,6 +13,16 @@
       <summary>Most recent y position of Harvey</summary>
       <description>Most recent y position of Harvey</description>
     </key>
+    <key name="bg-color" type="s">
+      <default>"#aedede"</default>
+      <summary>Last valid background color</summary>
+      <description>Last valid background color</description>
+    </key> 
+    <key name="fg-color" type="s">
+      <default>"#333"</default>
+      <summary>Last valid foreground color</summary>
+      <description>Last valid foreground color</description>
+    </key>   
   </schema>
 </schemalist>
 

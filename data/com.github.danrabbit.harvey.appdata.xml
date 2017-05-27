@@ -7,7 +7,7 @@
     <name>Nimbus</name>
     <summary>The hero that Gotham needs right now</summary>
     <description>
-        <p>Calculate and visualize color contrast.</p>
+        <p>Calculate and visualize color contrast. Harvey checks a given set of colors for WCAG contrast compliance.</p>
     </description>
     <provides>
         <binary>com.github.danrabbit.harvey</binary>

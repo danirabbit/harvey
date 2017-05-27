@@ -28,6 +28,7 @@ public class MainWindow : Gtk.Window {
         }
     """;
 
+    private Settings settings;
     private Gdk.RGBA gdk_color;
     private Gtk.Entry bg_entry;
     private Gtk.Entry fg_entry;
@@ -44,6 +45,8 @@ public class MainWindow : Gtk.Window {
     }
 
     construct {
+        settings = new Settings ("com.github.danrabbit.harvey");
+
         var fg_label = new Gtk.Label (_("Foreground Color"));
         fg_label.get_style_context ().add_class ("h4");
         fg_label.xalign = 0;
@@ -54,9 +57,11 @@ public class MainWindow : Gtk.Window {
         bg_label.xalign = 0;
 
         fg_entry = new Gtk.Entry ();
+        fg_entry.text = settings.get_string ("fg-color");
         fg_entry.placeholder_text = _("#333");
 
         bg_entry = new Gtk.Entry ();
+        bg_entry.text = settings.get_string ("bg-color");
         bg_entry.placeholder_text = _("rgb (110, 200, 230)");
 
         var input_grid = new Gtk.Grid ();
@@ -130,6 +135,8 @@ public class MainWindow : Gtk.Window {
         bg_entry.changed.connect (() => {
             on_entry_changed ();
         });
+
+        style_results_pane (fg_entry.text, bg_entry.text);
     }
 
     private void on_entry_changed () {
@@ -148,6 +155,9 @@ public class MainWindow : Gtk.Window {
             } catch (GLib.Error e) {
                 return;
             }
+
+            settings.set_string ("fg-color", fg_entry.text);
+            settings.set_string ("bg-color", bg_entry.text);
 
             gdk_color.parse (fg_color);
             var pango_fg_luminance = get_luminance (gdk_color);
