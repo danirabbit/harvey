@@ -1,6 +1,8 @@
 # Harvey
 
-The hero that Gotham needs
+The hero that Gotham needs. Harvey is a color contrast checker. It checks a given set of colors for WCAG contrast compliance.
+
+![Harvey Screenshot](data/screenshot.png?raw=true)
 
 ## Building, Testing, and Installation
 
