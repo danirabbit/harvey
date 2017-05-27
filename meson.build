@@ -1,5 +1,5 @@
 project('com.github.danrabbit.harvey', ['vala', 'c'],
-    version: '0.2.0'
+    version: '0.1.0'
 )
 
 gnome = import('gnome')
