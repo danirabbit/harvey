@@ -129,6 +129,14 @@ public class MainWindow : Gtk.Window {
         set_titlebar (header_grid);
         show_all ();
 
+        button_press_event.connect ((e) => {
+            if (e.button == Gdk.BUTTON_PRIMARY) {
+                begin_move_drag ((int) e.button, (int) e.x_root, (int) e.y_root, e.time);
+                return true;
+            }
+            return false;
+        });
+
         fg_entry.changed.connect (() => {
             on_entry_changed ();
         });
