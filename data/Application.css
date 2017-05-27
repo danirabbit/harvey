@@ -35,7 +35,8 @@
     box-shadow: inset 1px 0 0 0 shade (@colorBackground, 1.07);
 }
 
-.input-header {
+.input-header,
+.titlebar {
     background-color: @bg_color;
     background-image: none;
     border: none;
