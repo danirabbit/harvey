@@ -182,7 +182,7 @@ public class MainWindow : Gtk.Window {
                 contrast_ratio = (pango_fg_luminance + 0.05) / (pango_bg_luminance + 0.05);
             }
 
-            results_label.label = "%i:1".printf ((int) contrast_ratio);
+            results_label.label = "%.1f:1".printf (contrast_ratio);
 
             if (contrast_ratio >= 4.5) {
                 aa_level.pass = true;
