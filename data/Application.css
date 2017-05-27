@@ -24,6 +24,7 @@
     color: #fff;
     background-color: alpha (#333, 0.9);
     border-radius: 50%;
+    box-shadow: 0 1px shade (@colorBackground, 1.15);
 }
 
 .results {
@@ -38,14 +39,14 @@
     background-color: @bg_color;
     background-image: none;
     border: none;
-    border-top-left-radius: 3px;
 }
 
 .output-header {
     background-color: @colorBackground;
     background-image: none;
+    border-bottom: none;
     border-left: solid 1px shade (@colorBackground, 0.8);
-    border-top-right-radius: 3px;
+    border-top-left-radius: 0;
     box-shadow: inset 1px 0 0 0 shade (@colorBackground, 1.07);
 }
 

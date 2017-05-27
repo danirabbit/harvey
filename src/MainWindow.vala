@@ -44,17 +44,28 @@ public class MainWindow : Gtk.Window {
     }
 
     construct {
+        var fg_label = new Gtk.Label (_("Foreground Color"));
+        fg_label.get_style_context ().add_class ("h4");
+        fg_label.xalign = 0;
+
+        var bg_label = new Gtk.Label (_("Background Color"));
+        bg_label.get_style_context ().add_class ("h4");
+        bg_label.margin_top = 12;
+        bg_label.xalign = 0;
+
         fg_entry = new Gtk.Entry ();
-        fg_entry.placeholder_text = _("Foreground Color");
+        fg_entry.placeholder_text = _("#333");
 
         bg_entry = new Gtk.Entry ();
-        bg_entry.placeholder_text = _("Background Color");
+        bg_entry.placeholder_text = _("rgb (110, 200, 230)");
 
         var input_grid = new Gtk.Grid ();
+        input_grid.orientation = Gtk.Orientation.VERTICAL;
         input_grid.margin = 12;
-        input_grid.row_spacing = 12;
-        input_grid.attach (fg_entry, 0, 0, 1, 1);
-        input_grid.attach (bg_entry, 0, 1, 1, 1);
+        input_grid.add (fg_label);
+        input_grid.add (fg_entry);
+        input_grid.add (bg_label);
+        input_grid.add (bg_entry);
 
         results_label = new Gtk.Label ("12:1");
         results_label.expand = true;
@@ -83,13 +94,21 @@ public class MainWindow : Gtk.Window {
         var input_header = new Gtk.HeaderBar ();
         input_header.decoration_layout = "close:";
         input_header.show_close_button = true;
-        input_header.get_style_context ().add_class ("input-header");
+
+        var input_header_context = input_header.get_style_context ();
+        input_header_context.add_class ("input-header");
+        input_header_context.add_class ("titlebar");
+        input_header_context.add_class ("default-decoration");
 
         var output_header = new Gtk.HeaderBar ();
         output_header.decoration_layout = ":maximize";
         output_header.hexpand = true;
         output_header.show_close_button = true;
-        output_header.get_style_context ().add_class ("output-header");
+
+        var output_header_context = output_header.get_style_context ();
+        output_header_context.add_class ("output-header");
+        output_header_context.add_class ("titlebar");
+        output_header_context.add_class ("default-decoration");
 
         var header_grid = new Gtk.Grid ();
         header_grid.add (input_header);
