@@ -34,8 +34,22 @@
     box-shadow: inset 1px 0 0 0 shade (@colorBackground, 1.07);
 }
 
-.titlebar {
- /*   background-color: @bg_color;
+.input-header {
+    background-color: @bg_color;
     background-image: none;
-    border: none;*/
+    border: none;
+    border-top-left-radius: 3px;
+}
+
+.output-header {
+    background-color: @colorBackground;
+    background-image: none;
+    border-left: solid 1px shade (@colorBackground, 0.8);
+    border-top-right-radius: 3px;
+    box-shadow: inset 1px 0 0 0 shade (@colorBackground, 1.07);
+}
+
+.output-header .button {
+    color: alpha (#333, 0.9);
+    icon-shadow: 0 1px shade (@colorBackground, 1.15);
 }

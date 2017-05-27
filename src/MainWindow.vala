@@ -22,6 +22,7 @@ public class MainWindow : Gtk.Window {
         @define-color colorForeground %s;
         @define-color colorBackground %s;
 
+        .output-header,
         .results {
             transition: all 250ms ease-in-out;
         }
@@ -79,8 +80,28 @@ public class MainWindow : Gtk.Window {
         grid.add (input_grid);
         grid.add (results_grid);
 
+        var input_header = new Gtk.HeaderBar ();
+        input_header.decoration_layout = "close:";
+        input_header.show_close_button = true;
+        input_header.get_style_context ().add_class ("input-header");
+
+        var output_header = new Gtk.HeaderBar ();
+        output_header.decoration_layout = ":maximize";
+        output_header.hexpand = true;
+        output_header.show_close_button = true;
+        output_header.get_style_context ().add_class ("output-header");
+
+        var header_grid = new Gtk.Grid ();
+        header_grid.add (input_header);
+        header_grid.add (output_header);
+
+        var sizegroup = new Gtk.SizeGroup (Gtk.SizeGroupMode.HORIZONTAL);
+        sizegroup.add_widget (input_grid);
+        sizegroup.add_widget (input_header);
+
         add (grid);
         get_style_context ().add_class ("rounded");
+        set_titlebar (header_grid);
         show_all ();
 
         fg_entry.changed.connect (() => {
