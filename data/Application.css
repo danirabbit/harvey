@@ -47,8 +47,3 @@
     border-top-left-radius: 0;
     box-shadow: inset 1px 0 0 0 shade (@colorBackground, 1.07);
 }
-
-.output-header .button {
-    color: alpha (#333, 0.9);
-    icon-shadow: 0 1px shade (@colorBackground, 1.15);
-}

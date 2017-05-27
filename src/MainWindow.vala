@@ -37,11 +37,14 @@ public class MainWindow : Gtk.Window {
     private GradeLabel aaa_level;
 
     public MainWindow (Gtk.Application application) {
-        Object (application: application,
-                icon_name: "com.github.danrabbit.harvey",
-                title: _("Harvey"),
-                height_request: 500,
-                width_request: 700);
+        Object (
+            application: application,
+            height_request: 500,
+            icon_name: "com.github.danrabbit.harvey",
+            resizable: false,
+            title: _("Harvey"),
+            width_request: 700
+        );
     }
 
     construct {
@@ -106,9 +109,7 @@ public class MainWindow : Gtk.Window {
         input_header_context.add_class ("default-decoration");
 
         var output_header = new Gtk.HeaderBar ();
-        output_header.decoration_layout = ":maximize";
         output_header.hexpand = true;
-        output_header.show_close_button = true;
 
         var output_header_context = output_header.get_style_context ();
         output_header_context.add_class ("output-header");
