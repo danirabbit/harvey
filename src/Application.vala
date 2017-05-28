@@ -41,7 +41,7 @@ public class Harvey : Gtk.Application {
             app_window.move (window_x, window_y);
         }
 
-        app_window.show ();
+        app_window.show_all ();
 
         var quit_action = new SimpleAction ("quit", null);
 

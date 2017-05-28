@@ -129,7 +129,6 @@ public class MainWindow : Gtk.Window {
         add (grid);
         get_style_context ().add_class ("rounded");
         set_titlebar (header_grid);
-        show_all ();
 
         fg_entry.icon_press.connect ((pos, event) => {
             if (pos == Gtk.EntryIconPosition.SECONDARY) {
