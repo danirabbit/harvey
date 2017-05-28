@@ -1,3 +1,9 @@
+com.github.danrabbit.harvey (0.1.2) xenial; urgency=medium
+
+  * Fix background color picker
+
+ -- Daniel Fore <daniel@elementary.io>  Sun, 28 May 2017 09:00:31 -0700
+
 com.github.danrabbit.harvey (0.1.1) xenial; urgency=medium
 
   * Add color picker
