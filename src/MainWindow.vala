@@ -133,7 +133,7 @@ public class MainWindow : Gtk.Window {
 
         fg_entry.icon_press.connect ((pos, event) => {
             if (pos == Gtk.EntryIconPosition.SECONDARY) {
-                on_entry_icon_press (fg_entry.text);
+                on_entry_icon_press (fg_entry);
             }
         });
 
@@ -143,7 +143,7 @@ public class MainWindow : Gtk.Window {
 
         bg_entry.icon_press.connect ((pos, event) => {
             if (pos == Gtk.EntryIconPosition.SECONDARY) {
-                on_entry_icon_press (bg_entry.text);
+                on_entry_icon_press (bg_entry);
             }
         });
 
@@ -154,8 +154,8 @@ public class MainWindow : Gtk.Window {
         style_results_pane (fg_entry.text, bg_entry.text);
     }
 
-    private void on_entry_icon_press (string color_string) {
-        gdk_color.parse (color_string);
+    private void on_entry_icon_press (Gtk.Entry entry) {
+        gdk_color.parse (entry.text);
 
         var dialog = new Gtk.ColorSelectionDialog ("");
         dialog.deletable = false;
@@ -165,7 +165,7 @@ public class MainWindow : Gtk.Window {
         widget.current_rgba = gdk_color;
 
         if (dialog.run () == Gtk.ResponseType.OK) {
-            fg_entry.text = widget.current_rgba.to_string ();
+            entry.text = widget.current_rgba.to_string ();
         }
         dialog.close ();
     }
