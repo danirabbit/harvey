@@ -4,14 +4,24 @@
     <id>com.github.danrabbit.harvey.desktop</id>
     <metadata_license>CC0-1.0</metadata_license>
     <project_license>GPL-3.0+</project_license>
-    <name>Nimbus</name>
+    <name>Harvey</name>
     <summary>The hero that Gotham needs right now</summary>
     <description>
         <p>Calculate and visualize color contrast. Harvey checks a given set of colors for WCAG contrast compliance.</p>
+        <ul>
+            <li>Pick colors from your display</li>
+            <li>Quit with the handy shortcut Ctrl + Q</li>
+            <li>Join the contrast rebellion</li>
+        </ul>
     </description>
     <provides>
         <binary>com.github.danrabbit.harvey</binary>
     </provides>
+    <screenshots>
+        <screenshot type="default">
+            <image>https://raw.githubusercontent.com/danrabbit/harvey/master/data/screenshot.png</image>
+        </screenshot>
+    </screenshots>
     <developer_name>Daniel Foré</developer_name>
     <url type="homepage">http://danielfore.com</url>
     <url type="bugtracker">https://github.com/danrabbit/harvey/issues</url>
