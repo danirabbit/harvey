@@ -62,10 +62,12 @@ public class MainWindow : Gtk.Window {
         fg_entry = new Gtk.Entry ();
         fg_entry.text = settings.get_string ("fg-color");
         fg_entry.placeholder_text = _("#333");
+        fg_entry.set_icon_from_icon_name (Gtk.EntryIconPosition.SECONDARY, "media-eq-symbolic");
 
         bg_entry = new Gtk.Entry ();
         bg_entry.text = settings.get_string ("bg-color");
         bg_entry.placeholder_text = _("rgb (110, 200, 230)");
+        bg_entry.set_icon_from_icon_name (Gtk.EntryIconPosition.SECONDARY, "media-eq-symbolic");
 
         var input_grid = new Gtk.Grid ();
         input_grid.orientation = Gtk.Orientation.VERTICAL;
@@ -129,16 +131,20 @@ public class MainWindow : Gtk.Window {
         set_titlebar (header_grid);
         show_all ();
 
-        button_press_event.connect ((e) => {
-            if (e.button == Gdk.BUTTON_PRIMARY) {
-                begin_move_drag ((int) e.button, (int) e.x_root, (int) e.y_root, e.time);
-                return true;
+        fg_entry.icon_press.connect ((pos, event) => {
+            if (pos == Gtk.EntryIconPosition.SECONDARY) {
+                on_entry_icon_press (fg_entry.text);
             }
-            return false;
         });
 
         fg_entry.changed.connect (() => {
             on_entry_changed ();
+        });
+
+        bg_entry.icon_press.connect ((pos, event) => {
+            if (pos == Gtk.EntryIconPosition.SECONDARY) {
+                on_entry_icon_press (bg_entry.text);
+            }
         });
 
         bg_entry.changed.connect (() => {
@@ -146,6 +152,22 @@ public class MainWindow : Gtk.Window {
         });
 
         style_results_pane (fg_entry.text, bg_entry.text);
+    }
+
+    private void on_entry_icon_press (string color_string) {
+        gdk_color.parse (color_string);
+
+        var dialog = new Gtk.ColorSelectionDialog ("");
+        dialog.deletable = false;
+        dialog.transient_for = this;
+
+        unowned Gtk.ColorSelection widget = dialog.get_color_selection ();
+        widget.current_rgba = gdk_color;
+
+        if (dialog.run () == Gtk.ResponseType.OK) {
+            fg_entry.text = widget.current_rgba.to_string ();
+        }
+        dialog.close ();
     }
 
     private void on_entry_changed () {
