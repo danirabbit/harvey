@@ -1,3 +1,9 @@
+com.github.danrabbit.harvey (0.1.1) xenial; urgency=medium
+
+  * Add color picker
+
+ -- Daniel Fore <daniel@elmentary.io>  Sun, 28 May 2017 08:31:55 -0700
+
 com.github.danrabbit.harvey (0.1.0) xenial; urgency=medium
 
   * Initial Release.

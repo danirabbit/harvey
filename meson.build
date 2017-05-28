@@ -1,5 +1,5 @@
 project('com.github.danrabbit.harvey', ['vala', 'c'],
-    version: '0.1.0'
+    version: '0.1.1'
 )
 
 gnome = import('gnome')
@@ -19,8 +19,7 @@ configure_file(output: 'config.h', configuration: conf)
 config_h_dir = include_directories('.')
 
 c_args = [
-  '-include', 'config.h',
-  '-DGWEATHER_I_KNOW_THIS_IS_UNSTABLE',
+  '-include', 'config.h'
 ]
 
 cc = meson.get_compiler('c')
