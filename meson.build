@@ -1,6 +1,4 @@
-project(
-    'com.github.danrabbit.harvey',
-    ['vala', 'c'],
+project('com.github.danrabbit.harvey', ['vala', 'c'],
     version: '0.1.4'
 )
 
@@ -8,8 +6,7 @@ gnome = import('gnome')
 i18n = import('i18n')
 
 asresources = gnome.compile_resources(
-    'as-resources',
-    'data/css.gresource.xml',
+    'as-resources', 'data/css.gresource.xml',
     source_dir: 'data',
     c_name: 'as'
 )
@@ -18,14 +15,11 @@ add_project_arguments(['--vapidir', join_paths(meson.current_source_dir(), 'vapi
 
 conf = configuration_data()
 conf.set_quoted('GETTEXT_PACKAGE', meson.project_name())
-configure_file(
-    output: 'config.h',
-    configuration: conf
-)
+configure_file(output: 'config.h', configuration: conf)
 config_h_dir = include_directories('.')
 
 c_args = [
-    '-include', 'config.h'
+  '-include', 'config.h'
 ]
 
 cc = meson.get_compiler('c')
