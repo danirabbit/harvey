@@ -17,6 +17,10 @@
 * Boston, MA 02110-1301 USA
 */
 
+grid.titlebar {
+	padding: 0;
+}
+
 .grade {
     color: #fff;
     background-color: alpha (#333, 0.9);
