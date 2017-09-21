@@ -36,9 +36,9 @@ executable(
         dependency('gtk+-3.0'),
         m_dep
     ],
-    install : true
+    install: true
 )
+subdir('data')
+subdir('po')
 
 meson.add_install_script('meson/post_install.py')
-
-subdir('data')
