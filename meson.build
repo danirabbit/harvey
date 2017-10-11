@@ -13,9 +13,6 @@ asresources = gnome.compile_resources(
     c_name: 'as'
 )
 
-cc = meson.get_compiler('c')
-m_dep = cc.find_library('m', required : false)
-
 executable(
     meson.project_name(),
     'src/Application.vala',
@@ -26,7 +23,7 @@ executable(
         dependency('glib-2.0'),
         dependency('gobject-2.0'),
         dependency('gtk+-3.0'),
-        m_dep
+        meson.get_compiler('c').find_library('m', required : false)
     ],
     install: true
 )
