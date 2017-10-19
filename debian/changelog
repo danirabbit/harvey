@@ -1,3 +1,9 @@
+com.github.danrabbit.harvey (0.1.7) xenial; urgency=medium
+
+  * Really make packaging happy
+
+ -- Daniel Fore <daniel@Yoga>  Thu, 19 Oct 2017 11:05:22 -0700
+
 com.github.danrabbit.harvey (0.1.6) xenial; urgency=medium
 
   * Make packaging happy about tests

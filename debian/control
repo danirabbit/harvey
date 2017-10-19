@@ -2,7 +2,9 @@ Source: com.github.danrabbit.harvey
 Section: x11
 Priority: extra
 Maintainer: Daniel Foré <daniel@elementary.io>
-Build-Depends: debhelper (>= 9),
+Build-Depends: appstream,
+               debhelper (>= 9),
+               desktop-file-utils,
                libgtk-3-dev,
                meson,
                valac
