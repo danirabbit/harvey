@@ -109,6 +109,7 @@ public class MainWindow : Gtk.Window {
         input_header_context.add_class ("input-header");
         input_header_context.add_class ("titlebar");
         input_header_context.add_class ("default-decoration");
+        input_header_context.add_class (Gtk.STYLE_CLASS_FLAT);
 
         var output_header = new Gtk.HeaderBar ();
         output_header.hexpand = true;
@@ -117,6 +118,7 @@ public class MainWindow : Gtk.Window {
         output_header_context.add_class ("output-header");
         output_header_context.add_class ("titlebar");
         output_header_context.add_class ("default-decoration");
+        output_header_context.add_class (Gtk.STYLE_CLASS_FLAT);
 
         var header_grid = new Gtk.Grid ();
         header_grid.add (input_header);

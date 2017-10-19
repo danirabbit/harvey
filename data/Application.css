@@ -31,23 +31,48 @@ grid.titlebar {
 .results {
     background-color: @colorBackground;
     color: @colorForeground;
-    border-bottom-right-radius: 3px;
-    border-left: solid 1px shade (@colorBackground, 0.8);
-    box-shadow: inset 1px 0 0 0 shade (@colorBackground, 1.07);
+    box-shadow:
+        inset 1px 0 0 0 shade (@colorBackground, 1.07),
+        inset -1px 0 0 0 shade (@colorBackground, 1.07),
+        inset 0 -1px 0 0 shade (@colorBackground, 1.1);
 }
 
-.input-header,
+.results:dir(ltr) {
+    border-bottom-right-radius: 3px;
+    border-left: solid 1px shade (@colorBackground, 0.8);
+}
+
+.results:dir(rtl) {
+    border-bottom-left-radius: 3px;
+    border-right: solid 1px shade (@colorBackground, 0.8);
+}
+
 .titlebar {
-    background-color: @bg_color;
-    background-image: none;
     border: none;
+}
+
+.input-header:dir(ltr) {
+    border-top-right-radius: 0;
+}
+
+.input-header:dir(rtl) {
+    border-top-left-radius: 0;
 }
 
 .output-header {
     background-color: @colorBackground;
-    background-image: none;
-    border-bottom: none;
+    box-shadow:
+        inset 1px 0 0 0 shade (@colorBackground, 1.07),
+        inset -1px 0 0 0 shade (@colorBackground, 1.07),
+        inset 0 1px 0 0 shade (@colorBackground, 1.2);
+}
+
+.output-header:dir(ltr) {
     border-left: solid 1px shade (@colorBackground, 0.8);
     border-top-left-radius: 0;
-    box-shadow: inset 1px 0 0 0 shade (@colorBackground, 1.07);
+}
+
+.output-header:dir(rtl) {
+    border-right: solid 1px shade (@colorBackground, 0.8);
+    border-top-right-radius: 0;
 }
