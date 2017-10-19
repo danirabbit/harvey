@@ -17,6 +17,18 @@
     <provides>
         <binary>com.github.danrabbit.harvey</binary>
     </provides>
+    ​<releases>
+        <release version="0.1.5" date="2017-10-19">
+        ​    <description>
+        ​      <ul>
+        ​        <li>Add HiDPI icons support</li>
+        ​        <li>RTL text layout support</li>
+        ​        <li>Now with automated testing</li>
+        ​        <li>Update to latest APIs; get ready for Juno</li>
+        ​      </ul>
+        ​    </description>
+        </release>
+    ​</releases>
     <screenshots>
         <screenshot type="default">
             <image>https://raw.githubusercontent.com/danrabbit/harvey/master/data/screenshot.png</image>
@@ -28,5 +40,6 @@
     <custom>
         <value key="x-appcenter-color-primary">#fff</value>
         <value key="x-appcenter-color-primary-text">#333</value>
+        <value key="x-appcenter-suggested-price">3</value>
     </custom>
 </component>

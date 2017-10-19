@@ -1,3 +1,11 @@
+com.github.danrabbit.harvey (0.1.5) xenial; urgency=medium
+
+  * Add HiDPI icons support
+  * Now with automated testing
+  * Update to latest APIs; get ready for Juno
+
+ -- Daniel Fore <daniel@Yoga>  Thu, 19 Oct 2017 10:30:55 -0700
+
 com.github.danrabbit.harvey (0.1.4) xenial; urgency=medium
 
   * Add a screenshot
