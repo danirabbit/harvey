@@ -29,10 +29,10 @@ msgstr "El héroe que Gotham estaba necesitando"
 
 #: data/com.github.danrabbit.harvey.appdata.xml.in:10
 msgid ""
-"Calculate and visualize color contrast. Harvey comprueba un conjunto determinado de colores "
+"Calculate and visualize color contrast. Harvey checks a given set of colors "
 "for WCAG contrast compliance."
 msgstr ""
-"Calcule y visualice el contraste de color, Harvey v"
+"Calcule y visualice el contraste de color, Harvey comprueba un conjunto determinado de colores"
 "para el cumplimiento del contraste WCAG."
 
 #: data/com.github.danrabbit.harvey.appdata.xml.in:12
