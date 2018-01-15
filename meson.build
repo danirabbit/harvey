@@ -3,7 +3,7 @@ project('com.github.danrabbit.harvey', 'vala', 'c')
 gnome = import('gnome')
 i18n = import('i18n')
 
-add_global_arguments('-DGETTEXT_PACKAGE="' + meson.project_name() + '"', language:'c')
+add_global_arguments('-DGETTEXT_PACKAGE="@0@"'.format (meson.project_name()), language:'c')
 
 asresources = gnome.compile_resources(
     'as-resources', 'data/css.gresource.xml',
