@@ -17,24 +17,24 @@
     <provides>
         <binary>com.github.danrabbit.harvey</binary>
     </provides>
-    ​<releases>
+    <releases>
         <release version="0.1.7" date="2017-10-19">
-        ​    <description>
-        ​      <ul>
-        ​        <li>Add HiDPI icons support</li>
-        ​        <li>RTL text layout support</li>
-        ​        <li>Now with automated testing</li>
-        ​        <li>Update to latest APIs; get ready for Juno</li>
-        ​      </ul>
-        ​    </description>
+            <description>
+              <ul>
+                <li>Add HiDPI icons support</li>
+                <li>RTL text layout support</li>
+                <li>Now with automated testing</li>
+                <li>Update to latest APIs; get ready for Juno</li>
+              </ul>
+            </description>
         </release>
-    ​</releases>
+    </releases>
     <screenshots>
         <screenshot type="default">
             <image>https://raw.githubusercontent.com/danrabbit/harvey/master/data/screenshot.png</image>
         </screenshot>
     </screenshots>
-​   <translation type="gettext">com.github.danrabbit.harvey</translation>
+    <translation type="gettext">com.github.danrabbit.harvey</translation>
     <developer_name>Daniel Foré</developer_name>
     <url type="homepage">http://danielfore.com</url>
     <url type="bugtracker">https://github.com/danrabbit/harvey/issues</url>
