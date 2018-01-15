@@ -34,7 +34,7 @@
             <image>https://raw.githubusercontent.com/danrabbit/harvey/master/data/screenshot.png</image>
         </screenshot>
     </screenshots>
-​   <translation type="gettext">com.github.danrabbit.harvey</translation>
+    <translation type="gettext">com.github.danrabbit.harvey</translation>
     <developer_name>Daniel Foré</developer_name>
     <url type="homepage">http://danielfore.com</url>
     <url type="bugtracker">https://github.com/danrabbit/harvey/issues</url>
