@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.danrabbit.harvey\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-15 10:02-0800\n"
+"POT-Creation-Date: 2018-01-15 10:27-0800\n"
 "PO-Revision-Date: 2018-01-12 17:30+0200\n"
 "Last-Translator: Alain M. <alain23@protonmail.com>\n"
 "Language-Team: none\n"
@@ -19,7 +19,7 @@ msgstr ""
 "X-Generator: Poedit 2.0.4\n"
 
 #: data/com.github.danrabbit.harvey.appdata.xml.in:7
-#: data/com.github.danrabbit.harvey.desktop.in:3
+#: data/com.github.danrabbit.harvey.desktop.in:3 src/MainWindow.vala:45
 msgid "Harvey"
 msgstr ""
 
@@ -47,7 +47,7 @@ msgstr "Salga con un práctico atajo Ctrl + Q"
 msgid "Join the contrast rebellion"
 msgstr "Únete a la rebelión de contraste"
 
-#: data/com.github.danrabbit.harvey.appdata.xml.in:37
+#: data/com.github.danrabbit.harvey.appdata.xml.in:38
 msgid "Daniel Foré"
 msgstr ""
 
@@ -62,3 +62,11 @@ msgstr ""
 #: data/com.github.danrabbit.harvey.desktop.in:7
 msgid "contrast;color;"
 msgstr "contraste;color;"
+
+#: src/MainWindow.vala:53
+msgid "Foreground Color"
+msgstr "Color de Primer Plano"
+
+#: src/MainWindow.vala:57
+msgid "Background Color"
+msgstr "Color de Fondo"

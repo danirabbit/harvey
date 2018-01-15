@@ -1,2 +1,3 @@
 data/com.github.danrabbit.harvey.appdata.xml.in
 data/com.github.danrabbit.harvey.desktop.in
+src/MainWindow.vala

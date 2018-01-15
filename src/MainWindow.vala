@@ -61,12 +61,12 @@ public class MainWindow : Gtk.Window {
 
         fg_entry = new Gtk.Entry ();
         fg_entry.text = settings.get_string ("fg-color");
-        fg_entry.placeholder_text = _("#333");
+        fg_entry.placeholder_text = "#333";
         fg_entry.set_icon_from_icon_name (Gtk.EntryIconPosition.SECONDARY, "media-eq-symbolic");
 
         bg_entry = new Gtk.Entry ();
         bg_entry.text = settings.get_string ("bg-color");
-        bg_entry.placeholder_text = _("rgb (110, 200, 230)");
+        bg_entry.placeholder_text = "rgb (110, 200, 230)";
         bg_entry.set_icon_from_icon_name (Gtk.EntryIconPosition.SECONDARY, "media-eq-symbolic");
 
         var input_grid = new Gtk.Grid ();
