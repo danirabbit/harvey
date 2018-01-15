@@ -18,6 +18,11 @@
         <binary>com.github.danrabbit.harvey</binary>
     </provides>
     <releases>
+        <release version="0.1.8" date="2018-1-15">
+            <description>
+              <p>Add French and Spanish Translations</p>
+            </description>
+        </release>
         <release version="0.1.7" date="2017-10-19">
             <description>
               <ul>

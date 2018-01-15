@@ -1,3 +1,9 @@
+com.github.danrabbit.harvey (0.1.8) xenial; urgency=medium
+
+  * Add French and Spanish translations
+
+ -- Daniel Fore <daniel@yoga>  Mon, 15 Jan 2018 10:55:40 -0800
+
 com.github.danrabbit.harvey (0.1.7) xenial; urgency=medium
 
   * Really make packaging happy
