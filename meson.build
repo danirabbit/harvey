@@ -33,5 +33,5 @@ meson.add_install_script('meson/post_install.py')
 test (
     'Vala lint',
     find_program('io.elementary.vala-lint'),
-    args: '$(find . -type f -name "*.vala")'
+    args: ['-d', join_paths(meson.source_root(), 'src')]
 )
