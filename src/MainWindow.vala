@@ -172,7 +172,7 @@ public class MainWindow : Gtk.Window {
             if (entry == fg_entry && prev_foreground_entry == null) {
                 prev_foreground_entry = entry.text;
             } else if (entry == bg_entry && prev_background_entry == null) {
-                prev_background_entry = widget.current_rgba.to_string ();
+                prev_background_entry = entry.text;
             }
 
            entry.text = widget.current_rgba.to_string ();
