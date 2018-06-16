@@ -32,6 +32,7 @@ public class MainWindow : Gtk.Window {
     private Gtk.Entry bg_entry;
     private Gtk.Entry fg_entry;
     private Gtk.Label results_label;
+    private GradeLabel a_level;
     private GradeLabel aa_level;
     private GradeLabel aaa_level;
 
@@ -84,18 +85,25 @@ public class MainWindow : Gtk.Window {
         results_label.valign = Gtk.Align.CENTER;
         results_label.halign = Gtk.Align.CENTER;
 
+        a_level = new GradeLabel ("WCAG A");
+        a_level.halign = Gtk.Align.CENTER;
+        a_level.tooltip_markup = "<big><b>%s</b></big>\n%s".printf (_("3:1"), _("The minimum level recommended by ISO-9241-3 and ANSI-HFES-100-1988 for standard text and vision"));
+
         aa_level = new GradeLabel ("WCAG AA");
         aa_level.halign = Gtk.Align.CENTER;
+        aa_level.tooltip_markup = "<big><b>%s</b></big>\n%s".printf (_("4.5:1"), _("Compensates for the loss in contrast that results from moderately low visual acuity, color deficiencies, or aging."));
 
         aaa_level = new GradeLabel ("WCAG AAA");
         aaa_level.halign = Gtk.Align.CENTER;
+        aaa_level.tooltip_markup = "<big><b>%s</b></big>\n%s".printf (_("7:1"), _("Compensates for the loss in contrast sensitivity usually experienced by users with about 20/80 vision. People with more than this degree of vision loss usually use assistive technologies."));
 
         var results_grid = new Gtk.Grid ();
         results_grid.row_spacing = 12;
         results_grid.get_style_context ().add_class ("results");
-        results_grid.attach (results_label, 0, 0, 2, 1);
-        results_grid.attach (aa_level, 0, 1, 1, 1);
-        results_grid.attach (aaa_level, 1, 1, 1, 1);
+        results_grid.attach (results_label, 0, 0, 3, 1);
+        results_grid.attach (a_level, 0, 1);
+        results_grid.attach (aa_level, 1, 1);
+        results_grid.attach (aaa_level, 2, 1);
 
         var grid = new Gtk.Grid ();
         grid.add (input_grid);
@@ -228,6 +236,12 @@ public class MainWindow : Gtk.Window {
             }
 
             results_label.label = "%.1f:1".printf (contrast_ratio);
+
+            if (contrast_ratio >= 3) {
+                a_level.pass = true;
+            } else {
+                a_level.pass = false;
+            }
 
             if (contrast_ratio >= 4.5) {
                 aa_level.pass = true;
