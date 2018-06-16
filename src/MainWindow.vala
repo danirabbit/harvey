@@ -36,6 +36,9 @@ public class MainWindow : Gtk.Window {
     private GradeLabel aa_level;
     private GradeLabel aaa_level;
 
+    private string? prev_foreground_entry = null;
+    private string? prev_background_entry = null;
+
     public MainWindow (Gtk.Application application) {
         Object (
             application: application,
@@ -165,9 +168,31 @@ public class MainWindow : Gtk.Window {
         unowned Gtk.ColorSelection widget = dialog.get_color_selection ();
         widget.current_rgba = gdk_color;
 
+        widget.color_changed.connect (() => {
+            if (entry == fg_entry && prev_foreground_entry == null) {
+                prev_foreground_entry = entry.text;
+            } else if (entry == bg_entry && prev_background_entry == null) {
+                prev_background_entry = entry.text;
+            }
+
+           entry.text = widget.current_rgba.to_string ();
+        });
+
         if (dialog.run () == Gtk.ResponseType.OK) {
             entry.text = widget.current_rgba.to_string ();
+        } else {
+            if (prev_foreground_entry != null) {
+                fg_entry.text = prev_foreground_entry;
+            }
+
+            if (prev_background_entry != null) {
+                bg_entry.text = prev_background_entry;
+            }
         }
+
+        prev_foreground_entry = null;
+        prev_background_entry = null;
+
         dialog.close ();
     }
 
