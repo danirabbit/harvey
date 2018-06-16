@@ -61,13 +61,6 @@ public class Harvey : Gtk.Application {
                 app_window.destroy ();
             }
         });
-
-        app_window.state_changed.connect (() => {
-            int root_x, root_y;
-            app_window.get_position (out root_x, out root_y);
-            settings.set_int ("window-x", root_x);
-            settings.set_int ("window-y", root_y);
-        });
     }
 
     public static int main (string[] args) {
