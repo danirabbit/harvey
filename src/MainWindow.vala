@@ -28,7 +28,6 @@ public class MainWindow : Gtk.Window {
         }
     """;
 
-    private Settings settings;
     private Gdk.RGBA gdk_color;
     private Gtk.Entry bg_entry;
     private Gtk.Entry fg_entry;
@@ -51,8 +50,6 @@ public class MainWindow : Gtk.Window {
     }
 
     construct {
-        settings = new Settings ("com.github.danrabbit.harvey");
-
         var fg_label = new Gtk.Label (_("Foreground Color"));
         fg_label.get_style_context ().add_class ("h4");
         fg_label.xalign = 0;
@@ -63,12 +60,12 @@ public class MainWindow : Gtk.Window {
         bg_label.xalign = 0;
 
         fg_entry = new Gtk.Entry ();
-        fg_entry.text = settings.get_string ("fg-color");
+        fg_entry.text = Harvey.settings.get_string ("fg-color");
         fg_entry.placeholder_text = "#333";
         fg_entry.set_icon_from_icon_name (Gtk.EntryIconPosition.SECONDARY, "media-eq-symbolic");
 
         bg_entry = new Gtk.Entry ();
-        bg_entry.text = settings.get_string ("bg-color");
+        bg_entry.text = Harvey.settings.get_string ("bg-color");
         bg_entry.placeholder_text = "rgb (110, 200, 230)";
         bg_entry.set_icon_from_icon_name (Gtk.EntryIconPosition.SECONDARY, "media-eq-symbolic");
 
@@ -213,8 +210,8 @@ public class MainWindow : Gtk.Window {
                 return;
             }
 
-            settings.set_string ("fg-color", fg_entry.text);
-            settings.set_string ("bg-color", bg_entry.text);
+            Harvey.settings.set_string ("fg-color", fg_entry.text);
+            Harvey.settings.set_string ("bg-color", bg_entry.text);
 
             gdk_color.parse (fg_color);
             var pango_fg_luminance = get_luminance (gdk_color);

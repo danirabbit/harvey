@@ -19,9 +19,15 @@
 */
 
 public class Harvey : Gtk.Application {
+    public static GLib.Settings settings;
+
     public Harvey () {
         Object (application_id: "com.github.danrabbit.harvey",
         flags: ApplicationFlags.FLAGS_NONE);
+    }
+
+    static construct {
+        settings = new Settings ("com.github.danrabbit.harvey");
     }
 
     protected override void activate () {
@@ -31,8 +37,6 @@ public class Harvey : Gtk.Application {
         }
 
         var app_window = new MainWindow (this);
-
-        var settings = new Settings ("com.github.danrabbit.harvey");
 
         var window_x = settings.get_int ("window-x");
         var window_y = settings.get_int ("window-y");
