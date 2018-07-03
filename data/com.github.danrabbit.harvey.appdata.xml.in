@@ -10,6 +10,7 @@
         <p>Calculate and visualize color contrast. Harvey checks a given set of colors for WCAG contrast compliance.</p>
         <ul>
             <li>Pick colors from your display</li>
+            <li>See explanations for different grades on hover</li>
             <li>Quit with the handy shortcut Ctrl + Q</li>
             <li>Join the contrast rebellion</li>
         </ul>
@@ -18,6 +19,17 @@
         <binary>com.github.danrabbit.harvey</binary>
     </provides>
     <releases>
+        <release version="1.0.0" date="2018-7-3">
+            <description>
+              <p>Juno update!</p>
+              <ul>
+                <li>Add a new A level</li>
+                <li>Show explanations for grades on hover</li>
+                <li>Live preview of color selector in main window</li>
+                <li>Code cleanups</li>
+              </ul>
+            </description>
+        </release>
         <release version="0.1.8" date="2018-1-15">
             <description>
               <p>Add French and Spanish Translations</p>

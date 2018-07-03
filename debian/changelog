@@ -1,14 +1,23 @@
+com.github.danrabbit.harvey (1.0.0) bionic; urgency=medium
+
+  * Add a new A level
+  * Show explanations for grades on hover
+  * Live preview of color selector in main window
+  * Code cleanups
+
+ -- Daniel Fore <daniel@elementary.io>  Tue, 03 Jul 2018 13:10:24 -0700
+
 com.github.danrabbit.harvey (0.1.8) xenial; urgency=medium
 
   * Add French and Spanish translations
 
- -- Daniel Fore <daniel@yoga>  Mon, 15 Jan 2018 10:55:40 -0800
+ -- Daniel Fore <daniel@elementary.io>  Mon, 15 Jan 2018 10:55:40 -0800
 
 com.github.danrabbit.harvey (0.1.7) xenial; urgency=medium
 
   * Really make packaging happy
 
- -- Daniel Fore <daniel@Yoga>  Thu, 19 Oct 2017 11:05:22 -0700
+ -- Daniel Fore <daniel@elementary.io>  Thu, 19 Oct 2017 11:05:22 -0700
 
 com.github.danrabbit.harvey (0.1.6) xenial; urgency=medium
 
