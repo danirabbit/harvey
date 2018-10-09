@@ -31,10 +31,9 @@ public class MainWindow : Gtk.Window {
     private Gdk.RGBA gdk_color;
     private Gtk.Entry bg_entry;
     private Gtk.Entry fg_entry;
+    private Gtk.Image results_info;
     private Gtk.Label results_label;
-    private GradeLabel a_level;
-    private GradeLabel aa_level;
-    private GradeLabel aaa_level;
+    private Gtk.Label results_primary;
 
     private string? prev_foreground_entry = null;
     private string? prev_background_entry = null;
@@ -42,11 +41,8 @@ public class MainWindow : Gtk.Window {
     public MainWindow (Gtk.Application application) {
         Object (
             application: application,
-            height_request: 500,
             icon_name: "com.github.danrabbit.harvey",
-            resizable: false,
-            title: _("Harvey"),
-            width_request: 700
+            title: _("Harvey")
         );
     }
 
@@ -61,60 +57,60 @@ public class MainWindow : Gtk.Window {
         bg_label.xalign = 0;
 
         fg_entry = new Gtk.Entry ();
-        fg_entry.text = Harvey.settings.get_string ("fg-color");
         fg_entry.placeholder_text = "#333";
+        fg_entry.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
         fg_entry.set_icon_from_icon_name (Gtk.EntryIconPosition.SECONDARY, "media-eq-symbolic");
 
         bg_entry = new Gtk.Entry ();
-        bg_entry.text = Harvey.settings.get_string ("bg-color");
         bg_entry.placeholder_text = "rgb (110, 200, 230)";
+        bg_entry.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
         bg_entry.set_icon_from_icon_name (Gtk.EntryIconPosition.SECONDARY, "media-eq-symbolic");
 
         var input_grid = new Gtk.Grid ();
+        input_grid.halign = Gtk.Align.START;
         input_grid.orientation = Gtk.Orientation.VERTICAL;
-        input_grid.margin = 12;
+        input_grid.get_style_context ().add_class ("input");
         input_grid.add (fg_label);
         input_grid.add (fg_entry);
         input_grid.add (bg_label);
         input_grid.add (bg_entry);
 
+        results_primary = new Gtk.Label (_("GREAT"));
+        results_primary.get_style_context ().add_class ("h1");
+        results_primary.hexpand = true;
+        results_primary.valign = Gtk.Align.END;
+        results_primary.vexpand = true;
+
         results_label = new Gtk.Label ("12:1");
-        results_label.expand = true;
-        results_label.get_style_context ().add_class ("h1");
+        results_label.get_style_context ().add_class ("h3");
         results_label.selectable = true;
-        results_label.valign = Gtk.Align.CENTER;
-        results_label.halign = Gtk.Align.CENTER;
+        results_label.valign = Gtk.Align.START;
+        results_label.vexpand = true;
 
-        a_level = new GradeLabel ("WCAG A");
-        a_level.halign = Gtk.Align.CENTER;
-        a_level.tooltip_markup = "<big><b>%s</b></big>\n%s".printf (_("3:1"), _("The minimum level recommended by ISO-9241-3 and ANSI-HFES-100-1988 for standard text and vision"));
+        results_info = new Gtk.Image.from_icon_name ("dialog-information-symbolic", Gtk.IconSize.MENU);
+        results_info.halign = Gtk.Align.END;
+        results_info.margin = 12;
 
-        aa_level = new GradeLabel ("WCAG AA");
-        aa_level.halign = Gtk.Align.CENTER;
-        aa_level.tooltip_markup = "<big><b>%s</b></big>\n%s".printf (_("4.5:1"), _("Compensates for the loss in contrast that results from moderately low visual acuity, color deficiencies, or aging."));
-
-        aaa_level = new GradeLabel ("WCAG AAA");
-        aaa_level.halign = Gtk.Align.CENTER;
-        aaa_level.tooltip_markup = "<big><b>%s</b></big>\n%s".printf (_("7:1"), _("Compensates for the loss in contrast sensitivity usually experienced by users with about 20/80 vision. People with more than this degree of vision loss usually use assistive technologies."));
+        var results_spacer = new Gtk.Grid ();
 
         var results_grid = new Gtk.Grid ();
-        results_grid.row_spacing = 12;
         results_grid.get_style_context ().add_class ("results");
-        results_grid.attach (results_label, 0, 0, 3, 1);
-        results_grid.attach (a_level, 0, 1);
-        results_grid.attach (aa_level, 1, 1);
-        results_grid.attach (aaa_level, 2, 1);
+        results_grid.attach (results_spacer, 0, 0, 1, 3);
+        results_grid.attach (results_primary, 1, 0);
+        results_grid.attach (results_label, 1, 1);
+        results_grid.attach (results_info, 1, 2);
 
-        var grid = new Gtk.Grid ();
-        grid.add (input_grid);
-        grid.add (results_grid);
+        var overlay = new Gtk.Overlay ();
+        overlay.add (results_grid);
+        overlay.add_overlay (input_grid);
 
         var input_header = new Gtk.HeaderBar ();
+        input_header.halign = Gtk.Align.START;
         input_header.decoration_layout = "close:";
         input_header.show_close_button = true;
 
         var input_header_context = input_header.get_style_context ();
-        input_header_context.add_class ("input-header");
+        input_header_context.add_class ("input");
         input_header_context.add_class ("titlebar");
         input_header_context.add_class ("default-decoration");
         input_header_context.add_class (Gtk.STYLE_CLASS_FLAT);
@@ -128,17 +124,19 @@ public class MainWindow : Gtk.Window {
         output_header_context.add_class ("default-decoration");
         output_header_context.add_class (Gtk.STYLE_CLASS_FLAT);
 
-        var header_grid = new Gtk.Grid ();
-        header_grid.add (input_header);
-        header_grid.add (output_header);
+        var header_overlay = new Gtk.Overlay ();
+        header_overlay.add (output_header);
+        header_overlay.add_overlay (input_header);
 
         var sizegroup = new Gtk.SizeGroup (Gtk.SizeGroupMode.HORIZONTAL);
         sizegroup.add_widget (input_grid);
         sizegroup.add_widget (input_header);
+        sizegroup.add_widget (results_spacer);
 
-        add (grid);
+        add (overlay);
         get_style_context ().add_class ("rounded");
-        set_titlebar (header_grid);
+        set_default_size (542, 308);
+        set_titlebar (header_overlay);
 
         fg_entry.icon_press.connect ((pos, event) => {
             if (pos == Gtk.EntryIconPosition.SECONDARY) {
@@ -161,6 +159,9 @@ public class MainWindow : Gtk.Window {
         });
 
         style_results_pane (fg_entry.text, bg_entry.text);
+
+        Harvey.settings.bind ("fg-color", fg_entry, "text", GLib.SettingsBindFlags.DEFAULT);
+        Harvey.settings.bind ("bg-color", bg_entry, "text", GLib.SettingsBindFlags.DEFAULT);
     }
 
     private void on_entry_icon_press (Gtk.Entry entry) {
@@ -218,9 +219,6 @@ public class MainWindow : Gtk.Window {
                 return;
             }
 
-            Harvey.settings.set_string ("fg-color", fg_entry.text);
-            Harvey.settings.set_string ("bg-color", bg_entry.text);
-
             gdk_color.parse (fg_color);
             var pango_fg_luminance = get_luminance (gdk_color);
 
@@ -235,24 +233,23 @@ public class MainWindow : Gtk.Window {
                 contrast_ratio = (pango_fg_luminance + 0.05) / (pango_bg_luminance + 0.05);
             }
 
-            results_label.label = "%.1f:1".printf (contrast_ratio);
-
-            if (contrast_ratio >= 3) {
-                a_level.pass = true;
-            } else {
-                a_level.pass = false;
-            }
-
-            if (contrast_ratio >= 4.5) {
-                aa_level.pass = true;
-            } else {
-                aa_level.pass = false;
-            }
 
             if (contrast_ratio >= 7) {
-                aaa_level.pass = true;
+                results_primary.label = _("GREAT");
+                results_label.label = "%.2f AAA".printf (contrast_ratio);
+                results_info.tooltip_markup = "<big><b>%s</b></big>\n%s".printf (_("Greater or Equal to 7:1"), _("Compensates for the loss in contrast sensitivity usually experienced by users with about 20/80 vision. People with more than this degree of vision loss usually use assistive technologies."));
+            } else if (contrast_ratio >= 4.5) {
+                results_primary.label = _("GOOD");
+                results_label.label = "%.2f AA".printf (contrast_ratio);
+                results_info.tooltip_markup = "<big><b>%s</b></big>\n%s".printf (_("Greater or Equal to 4.5:1"), _("Compensates for the loss in contrast that results from moderately low visual acuity, color deficiencies, or aging."));
+            } else if (contrast_ratio >= 3) {
+                results_primary.label = _("PASS");
+                results_label.label = "%.2f A".printf (contrast_ratio);
+                results_info.tooltip_markup = "<big><b>%s</b></big>\n%s".printf (_("Greater or Equal to 3:1"), _("The minimum level recommended by ISO-9241-3 and ANSI-HFES-100-1988 for standard text and vision"));
             } else {
-                aaa_level.pass = false;
+                results_primary.label = _("FAIL");
+                results_label.label = "%.2f".printf (contrast_ratio);
+                results_info.tooltip_markup = "<big><b>%s</b></big>\n%s".printf (_("Less Than 3:1"), _("Fails to meet the minimum level recommended by ISO-9241-3 and ANSI-HFES-100-1988 for standard text and vision"));
             }
 
     }

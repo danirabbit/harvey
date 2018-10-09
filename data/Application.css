@@ -17,10 +17,6 @@
 * Boston, MA 02110-1301 USA
 */
 
-grid.titlebar {
-	padding: 0;
-}
-
 .grade {
     color: #fff;
     background-color: alpha (#333, 0.9);
@@ -28,34 +24,60 @@ grid.titlebar {
     box-shadow: 0 1px shade (@colorBackground, 1.15);
 }
 
+.input {
+    background: alpha (#fff, 0.8);
+}
+
+.input:dir(ltr) {
+    border-right: solid 1px shade (@colorBackground, 0.8);
+}
+
+.input:dir(rtl) {
+    border-left: solid 1px shade (@colorBackground, 0.8);
+}
+
+grid.input {
+    box-shadow:
+        inset 1px 0 0 0 alpha (#fff, 0.1),
+        inset -1px 0 0 0 alpha (#fff, 0.1);
+    padding: 12px;
+}
+
+grid.input:dir(ltr) {
+    border-bottom-left-radius: 3px;
+}
+
+grid.input:dir(rtl) {
+    border-bottom-right-radius: 3px;
+}
+
 .results {
     background-color: @colorBackground;
     color: @colorForeground;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
     box-shadow:
         inset 1px 0 0 0 shade (@colorBackground, 1.07),
         inset -1px 0 0 0 shade (@colorBackground, 1.07),
         inset 0 -1px 0 0 shade (@colorBackground, 1.1);
 }
 
-.results:dir(ltr) {
-    border-bottom-right-radius: 3px;
-    border-left: solid 1px shade (@colorBackground, 0.8);
-}
-
-.results:dir(rtl) {
-    border-bottom-left-radius: 3px;
-    border-right: solid 1px shade (@colorBackground, 0.8);
-}
-
 .titlebar {
     border: none;
 }
 
-.input-header:dir(ltr) {
+headerbar.input {
+    box-shadow:
+        inset 1px 0 0 0 alpha (#fff, 0.1),
+        inset -1px 0 0 0 alpha (#fff, 0.1),
+        inset 0 1px 0 0 alpha(#fff, 0.3);
+}
+
+headerbar.input:dir(ltr) {
     border-top-right-radius: 0;
 }
 
-.input-header:dir(rtl) {
+headerbar.input:dir(rtl) {
     border-top-left-radius: 0;
 }
 
@@ -67,12 +89,6 @@ grid.titlebar {
         inset 0 1px 0 0 shade (@colorBackground, 1.2);
 }
 
-.output-header:dir(ltr) {
-    border-left: solid 1px shade (@colorBackground, 0.8);
-    border-top-left-radius: 0;
-}
-
-.output-header:dir(rtl) {
-    border-right: solid 1px shade (@colorBackground, 0.8);
-    border-top-right-radius: 0;
+entry {
+    background: transparent;
 }
