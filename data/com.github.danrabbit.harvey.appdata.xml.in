@@ -19,6 +19,11 @@
         <binary>com.github.danrabbit.harvey</binary>
     </provides>
     <releases>
+          <release version="1.0.1" date="2019-3-31">
+            <description>
+              <p>Update French translation thanks to @NathanBnm</p>
+            </description>
+        </release>
         <release version="1.0.0" date="2018-7-3">
             <description>
               <p>Juno update!</p>
