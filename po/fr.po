@@ -53,7 +53,7 @@ msgstr "Rejoignez la rébellion du contraste"
 
 #: data/com.github.danrabbit.harvey.appdata.xml.in:24
 msgid "Update French translation thanks to @NathanBnm"
-msgstr ""
+msgstr "Mise à jour des traductions françaises grâce à @NathanBnm"
 
 #: data/com.github.danrabbit.harvey.appdata.xml.in:29
 msgid "Juno update!"
