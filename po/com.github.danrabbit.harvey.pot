@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.danrabbit.harvey\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-22 18:46+0100\n"
+"POT-Creation-Date: 2019-03-22 18:59+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -49,46 +49,50 @@ msgid "Join the contrast rebellion"
 msgstr ""
 
 #: data/com.github.danrabbit.harvey.appdata.xml.in:24
-msgid "Juno update!"
-msgstr ""
-
-#: data/com.github.danrabbit.harvey.appdata.xml.in:26
-msgid "Add a new A level"
-msgstr ""
-
-#: data/com.github.danrabbit.harvey.appdata.xml.in:27
-msgid "Show explanations for grades on hover"
-msgstr ""
-
-#: data/com.github.danrabbit.harvey.appdata.xml.in:28
-msgid "Live preview of color selector in main window"
+msgid "Update French translation thanks to @NathanBnm"
 msgstr ""
 
 #: data/com.github.danrabbit.harvey.appdata.xml.in:29
+msgid "Juno update!"
+msgstr ""
+
+#: data/com.github.danrabbit.harvey.appdata.xml.in:31
+msgid "Add a new A level"
+msgstr ""
+
+#: data/com.github.danrabbit.harvey.appdata.xml.in:32
+msgid "Show explanations for grades on hover"
+msgstr ""
+
+#: data/com.github.danrabbit.harvey.appdata.xml.in:33
+msgid "Live preview of color selector in main window"
+msgstr ""
+
+#: data/com.github.danrabbit.harvey.appdata.xml.in:34
 msgid "Code cleanups"
 msgstr ""
 
-#: data/com.github.danrabbit.harvey.appdata.xml.in:35
+#: data/com.github.danrabbit.harvey.appdata.xml.in:40
 msgid "Add French and Spanish Translations"
 msgstr ""
 
-#: data/com.github.danrabbit.harvey.appdata.xml.in:41
+#: data/com.github.danrabbit.harvey.appdata.xml.in:46
 msgid "Add HiDPI icons support"
 msgstr ""
 
-#: data/com.github.danrabbit.harvey.appdata.xml.in:42
+#: data/com.github.danrabbit.harvey.appdata.xml.in:47
 msgid "RTL text layout support"
 msgstr ""
 
-#: data/com.github.danrabbit.harvey.appdata.xml.in:43
+#: data/com.github.danrabbit.harvey.appdata.xml.in:48
 msgid "Now with automated testing"
 msgstr ""
 
-#: data/com.github.danrabbit.harvey.appdata.xml.in:44
+#: data/com.github.danrabbit.harvey.appdata.xml.in:49
 msgid "Update to latest APIs; get ready for Juno"
 msgstr ""
 
-#: data/com.github.danrabbit.harvey.appdata.xml.in:84
+#: data/com.github.danrabbit.harvey.appdata.xml.in:89
 msgid "Daniel Foré"
 msgstr ""
 

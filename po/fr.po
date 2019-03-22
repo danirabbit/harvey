@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.danrabbit.harvey\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-22 18:46+0100\n"
+"POT-Creation-Date: 2019-03-22 18:59+0100\n"
 "PO-Revision-Date: 2019-03-22 18:55+0100\n"
 "Last-Translator: NathanBnm\n"
 "Language-Team: Français\n"
@@ -52,46 +52,50 @@ msgid "Join the contrast rebellion"
 msgstr "Rejoignez la rébellion du contraste"
 
 #: data/com.github.danrabbit.harvey.appdata.xml.in:24
+msgid "Update French translation thanks to @NathanBnm"
+msgstr ""
+
+#: data/com.github.danrabbit.harvey.appdata.xml.in:29
 msgid "Juno update!"
 msgstr "Mise à jour pour Juno !"
 
-#: data/com.github.danrabbit.harvey.appdata.xml.in:26
+#: data/com.github.danrabbit.harvey.appdata.xml.in:31
 msgid "Add a new A level"
 msgstr "Ajout d'un nouveau niveau A"
 
-#: data/com.github.danrabbit.harvey.appdata.xml.in:27
+#: data/com.github.danrabbit.harvey.appdata.xml.in:32
 msgid "Show explanations for grades on hover"
 msgstr "Affichage des explications pour les niveaux au survol"
 
-#: data/com.github.danrabbit.harvey.appdata.xml.in:28
+#: data/com.github.danrabbit.harvey.appdata.xml.in:33
 msgid "Live preview of color selector in main window"
 msgstr "Aperçu en tant réel du sélecteur de couleur dans la fenêtre principale"
 
-#: data/com.github.danrabbit.harvey.appdata.xml.in:29
+#: data/com.github.danrabbit.harvey.appdata.xml.in:34
 msgid "Code cleanups"
 msgstr "Amélioration du code"
 
-#: data/com.github.danrabbit.harvey.appdata.xml.in:35
+#: data/com.github.danrabbit.harvey.appdata.xml.in:40
 msgid "Add French and Spanish Translations"
 msgstr "Ajout des traductions françaises et espagnoles"
 
-#: data/com.github.danrabbit.harvey.appdata.xml.in:41
+#: data/com.github.danrabbit.harvey.appdata.xml.in:46
 msgid "Add HiDPI icons support"
 msgstr "Ajout du support des icônes HDPI"
 
-#: data/com.github.danrabbit.harvey.appdata.xml.in:42
+#: data/com.github.danrabbit.harvey.appdata.xml.in:47
 msgid "RTL text layout support"
 msgstr "Prise en charge de l'affichage du texte de droite à gauche"
 
-#: data/com.github.danrabbit.harvey.appdata.xml.in:43
+#: data/com.github.danrabbit.harvey.appdata.xml.in:48
 msgid "Now with automated testing"
 msgstr "Test automatique"
 
-#: data/com.github.danrabbit.harvey.appdata.xml.in:44
+#: data/com.github.danrabbit.harvey.appdata.xml.in:49
 msgid "Update to latest APIs; get ready for Juno"
 msgstr "Mise à jour vers les dernières APIs ; Préparation pour Juno"
 
-#: data/com.github.danrabbit.harvey.appdata.xml.in:84
+#: data/com.github.danrabbit.harvey.appdata.xml.in:89
 msgid "Daniel Foré"
 msgstr "Daniel Foré"
 
@@ -124,8 +128,8 @@ msgid ""
 "The minimum level recommended by ISO-9241-3 and ANSI-HFES-100-1988 for "
 "standard text and vision"
 msgstr ""
-"Le niveau minimum recommandé par les normes ISO-9241-3 et ANSI-HFES-100-1988 pour "
-"le texte standard et la vision."
+"Le niveau minimum recommandé par les normes ISO-9241-3 et ANSI-HFES-100-1988 "
+"pour le texte standard et la vision."
 
 #: src/MainWindow.vala:94
 msgid "4.5:1"
@@ -149,6 +153,7 @@ msgid ""
 "users with about 20/80 vision. People with more than this degree of vision "
 "loss usually use assistive technologies."
 msgstr ""
-"Compense la perte de sensibilité aux contrastes habituellement subie par les utilisateurs "
-"ayant une vision d'environ 20/80. Les personnes atteintes d'une perte de vision "
-"supérieure à ce degré utilisent habituellement des technologies d'assistance."
+"Compense la perte de sensibilité aux contrastes habituellement subie par les "
+"utilisateurs ayant une vision d'environ 20/80. Les personnes atteintes d'une "
+"perte de vision supérieure à ce degré utilisent habituellement des "
+"technologies d'assistance."
