@@ -25,7 +25,7 @@ msgstr "Harvey"
 
 #: data/com.github.danrabbit.harvey.appdata.xml.in:8
 msgid "The hero that Gotham needs right now"
-msgstr "Le héro dont Gotham a besoin dès à présent"
+msgstr "Le héros dont Gotham a besoin dès à présent"
 
 #: data/com.github.danrabbit.harvey.appdata.xml.in:10
 msgid ""
