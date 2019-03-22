@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.danrabbit.harvey\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-15 10:49-0800\n"
+"POT-Creation-Date: 2019-03-22 18:46+0100\n"
 "PO-Revision-Date: 2018-01-12 17:30+0200\n"
 "Last-Translator: Alain M. <alain23@protonmail.com>\n"
 "Language-Team: none\n"
@@ -19,7 +19,7 @@ msgstr ""
 "X-Generator: Poedit 2.0.4\n"
 
 #: data/com.github.danrabbit.harvey.appdata.xml.in:7
-#: data/com.github.danrabbit.harvey.desktop.in:3 src/MainWindow.vala:45
+#: data/com.github.danrabbit.harvey.desktop.in:3 src/MainWindow.vala:48
 msgid "Harvey"
 msgstr ""
 
@@ -40,14 +40,58 @@ msgid "Pick colors from your display"
 msgstr "Seleccione colores desde la pantalla"
 
 #: data/com.github.danrabbit.harvey.appdata.xml.in:13
+msgid "See explanations for different grades on hover"
+msgstr ""
+
+#: data/com.github.danrabbit.harvey.appdata.xml.in:14
 msgid "Quit with the handy shortcut Ctrl + Q"
 msgstr "Salga con un práctico atajo Ctrl + Q"
 
-#: data/com.github.danrabbit.harvey.appdata.xml.in:14
+#: data/com.github.danrabbit.harvey.appdata.xml.in:15
 msgid "Join the contrast rebellion"
 msgstr "Únete a la rebelión de contraste"
 
-#: data/com.github.danrabbit.harvey.appdata.xml.in:38
+#: data/com.github.danrabbit.harvey.appdata.xml.in:24
+msgid "Juno update!"
+msgstr ""
+
+#: data/com.github.danrabbit.harvey.appdata.xml.in:26
+msgid "Add a new A level"
+msgstr ""
+
+#: data/com.github.danrabbit.harvey.appdata.xml.in:27
+msgid "Show explanations for grades on hover"
+msgstr ""
+
+#: data/com.github.danrabbit.harvey.appdata.xml.in:28
+msgid "Live preview of color selector in main window"
+msgstr ""
+
+#: data/com.github.danrabbit.harvey.appdata.xml.in:29
+msgid "Code cleanups"
+msgstr ""
+
+#: data/com.github.danrabbit.harvey.appdata.xml.in:35
+msgid "Add French and Spanish Translations"
+msgstr ""
+
+#: data/com.github.danrabbit.harvey.appdata.xml.in:41
+msgid "Add HiDPI icons support"
+msgstr ""
+
+#: data/com.github.danrabbit.harvey.appdata.xml.in:42
+msgid "RTL text layout support"
+msgstr ""
+
+#: data/com.github.danrabbit.harvey.appdata.xml.in:43
+msgid "Now with automated testing"
+msgstr ""
+
+#: data/com.github.danrabbit.harvey.appdata.xml.in:44
+msgid "Update to latest APIs; get ready for Juno"
+msgstr ""
+
+#: data/com.github.danrabbit.harvey.appdata.xml.in:84
 msgid "Daniel Foré"
 msgstr ""
 
@@ -63,10 +107,41 @@ msgstr ""
 msgid "contrast;color;"
 msgstr "contraste;color;"
 
-#: src/MainWindow.vala:53
+#: src/MainWindow.vala:54
 msgid "Foreground Color"
 msgstr "Color de Primer Plano"
 
-#: src/MainWindow.vala:57
+#: src/MainWindow.vala:58
 msgid "Background Color"
 msgstr "Color de Fondo"
+
+#: src/MainWindow.vala:90
+msgid "3:1"
+msgstr ""
+
+#: src/MainWindow.vala:90
+msgid ""
+"The minimum level recommended by ISO-9241-3 and ANSI-HFES-100-1988 for "
+"standard text and vision"
+msgstr ""
+
+#: src/MainWindow.vala:94
+msgid "4.5:1"
+msgstr ""
+
+#: src/MainWindow.vala:94
+msgid ""
+"Compensates for the loss in contrast that results from moderately low visual "
+"acuity, color deficiencies, or aging."
+msgstr ""
+
+#: src/MainWindow.vala:98
+msgid "7:1"
+msgstr ""
+
+#: src/MainWindow.vala:98
+msgid ""
+"Compensates for the loss in contrast sensitivity usually experienced by "
+"users with about 20/80 vision. People with more than this degree of vision "
+"loss usually use assistive technologies."
+msgstr ""
