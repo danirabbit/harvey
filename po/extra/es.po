@@ -1,15 +1,15 @@
 # Spanish translations for extra package.
 # Copyright (C) 2020 THE extra'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the extra package.
-# Automatically generated, 2020.
+# Alain M. <alain23@protonmail.com>, 2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-01 14:06+0200\n"
+"POT-Creation-Date: 2020-05-01 14:12+0200\n"
 "PO-Revision-Date: 2020-05-01 14:06+0200\n"
-"Last-Translator: Automatically generated\n"
+"Last-Translator: Alain M. <alain23@protonmail.com>\n"
 "Language-Team: none\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
@@ -20,33 +20,35 @@ msgstr ""
 #: data/com.github.danrabbit.harvey.desktop.in:3
 #: data/com.github.danrabbit.harvey.appdata.xml.in:7
 msgid "Harvey"
-msgstr ""
+msgstr "Harvey"
 
 #: data/com.github.danrabbit.harvey.desktop.in:4
 msgid "Calculate and visualize color contrast"
-msgstr ""
+msgstr "Calcule y visualice el contraste de color"
 
 #: data/com.github.danrabbit.harvey.desktop.in:6
 msgid "com.github.danrabbit.harvey"
-msgstr ""
+msgstr "com.github.danrabbit.harvey"
 
 #: data/com.github.danrabbit.harvey.desktop.in:7
 msgid "contrast;color;"
-msgstr ""
+msgstr "contraste;color;"
 
 #: data/com.github.danrabbit.harvey.appdata.xml.in:8
 msgid "The hero that Gotham needs right now"
-msgstr ""
+msgstr "El héroe que Gotham estaba necesitando"
 
 #: data/com.github.danrabbit.harvey.appdata.xml.in:10
 msgid ""
 "Calculate and visualize color contrast. Harvey checks a given set of colors "
 "for WCAG contrast compliance."
 msgstr ""
+"Calcule y visualice el contraste de color, Harvey comprueba un conjunto "
+"determinado de colorespara el cumplimiento del contraste WCAG."
 
 #: data/com.github.danrabbit.harvey.appdata.xml.in:12
 msgid "Pick colors from your display"
-msgstr ""
+msgstr "Seleccione colores desde la pantalla"
 
 #: data/com.github.danrabbit.harvey.appdata.xml.in:13
 msgid "See explanations for different grades on hover"
@@ -54,11 +56,11 @@ msgstr ""
 
 #: data/com.github.danrabbit.harvey.appdata.xml.in:14
 msgid "Quit with the handy shortcut Ctrl + Q"
-msgstr ""
+msgstr "Salga con un práctico atajo Ctrl + Q"
 
 #: data/com.github.danrabbit.harvey.appdata.xml.in:15
 msgid "Join the contrast rebellion"
-msgstr ""
+msgstr "Únete a la rebelión de contraste"
 
 #: data/com.github.danrabbit.harvey.appdata.xml.in:24
 msgid "Update French translation thanks to @NathanBnm"
@@ -106,4 +108,4 @@ msgstr ""
 
 #: data/com.github.danrabbit.harvey.appdata.xml.in:89
 msgid "Daniel Foré"
-msgstr ""
+msgstr "Daniel Foré"
