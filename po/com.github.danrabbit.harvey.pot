@@ -8,104 +8,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.danrabbit.harvey\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-22 18:59+0100\n"
+"POT-Creation-Date: 2020-05-01 14:06+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: data/com.github.danrabbit.harvey.appdata.xml.in:7
-#: data/com.github.danrabbit.harvey.desktop.in:3 src/MainWindow.vala:48
+#: src/MainWindow.vala:48
 msgid "Harvey"
-msgstr ""
-
-#: data/com.github.danrabbit.harvey.appdata.xml.in:8
-msgid "The hero that Gotham needs right now"
-msgstr ""
-
-#: data/com.github.danrabbit.harvey.appdata.xml.in:10
-msgid ""
-"Calculate and visualize color contrast. Harvey checks a given set of colors "
-"for WCAG contrast compliance."
-msgstr ""
-
-#: data/com.github.danrabbit.harvey.appdata.xml.in:12
-msgid "Pick colors from your display"
-msgstr ""
-
-#: data/com.github.danrabbit.harvey.appdata.xml.in:13
-msgid "See explanations for different grades on hover"
-msgstr ""
-
-#: data/com.github.danrabbit.harvey.appdata.xml.in:14
-msgid "Quit with the handy shortcut Ctrl + Q"
-msgstr ""
-
-#: data/com.github.danrabbit.harvey.appdata.xml.in:15
-msgid "Join the contrast rebellion"
-msgstr ""
-
-#: data/com.github.danrabbit.harvey.appdata.xml.in:24
-msgid "Update French translation thanks to @NathanBnm"
-msgstr ""
-
-#: data/com.github.danrabbit.harvey.appdata.xml.in:29
-msgid "Juno update!"
-msgstr ""
-
-#: data/com.github.danrabbit.harvey.appdata.xml.in:31
-msgid "Add a new A level"
-msgstr ""
-
-#: data/com.github.danrabbit.harvey.appdata.xml.in:32
-msgid "Show explanations for grades on hover"
-msgstr ""
-
-#: data/com.github.danrabbit.harvey.appdata.xml.in:33
-msgid "Live preview of color selector in main window"
-msgstr ""
-
-#: data/com.github.danrabbit.harvey.appdata.xml.in:34
-msgid "Code cleanups"
-msgstr ""
-
-#: data/com.github.danrabbit.harvey.appdata.xml.in:40
-msgid "Add French and Spanish Translations"
-msgstr ""
-
-#: data/com.github.danrabbit.harvey.appdata.xml.in:46
-msgid "Add HiDPI icons support"
-msgstr ""
-
-#: data/com.github.danrabbit.harvey.appdata.xml.in:47
-msgid "RTL text layout support"
-msgstr ""
-
-#: data/com.github.danrabbit.harvey.appdata.xml.in:48
-msgid "Now with automated testing"
-msgstr ""
-
-#: data/com.github.danrabbit.harvey.appdata.xml.in:49
-msgid "Update to latest APIs; get ready for Juno"
-msgstr ""
-
-#: data/com.github.danrabbit.harvey.appdata.xml.in:89
-msgid "Daniel Foré"
-msgstr ""
-
-#: data/com.github.danrabbit.harvey.desktop.in:4
-msgid "Calculate and visualize color contrast"
-msgstr ""
-
-#: data/com.github.danrabbit.harvey.desktop.in:6
-msgid "com.github.danrabbit.harvey"
-msgstr ""
-
-#: data/com.github.danrabbit.harvey.desktop.in:7
-msgid "contrast;color;"
 msgstr ""
 
 #: src/MainWindow.vala:54

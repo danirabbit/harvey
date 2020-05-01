@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.danrabbit.harvey\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-22 18:59+0100\n"
+"POT-Creation-Date: 2020-05-01 14:06+0200\n"
 "PO-Revision-Date: 2019-03-22 18:55+0100\n"
 "Last-Translator: NathanBnm\n"
 "Language-Team: Français\n"
@@ -18,98 +18,9 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Poedit 2.0.4\n"
 
-#: data/com.github.danrabbit.harvey.appdata.xml.in:7
-#: data/com.github.danrabbit.harvey.desktop.in:3 src/MainWindow.vala:48
+#: src/MainWindow.vala:48
 msgid "Harvey"
 msgstr "Harvey"
-
-#: data/com.github.danrabbit.harvey.appdata.xml.in:8
-msgid "The hero that Gotham needs right now"
-msgstr "Le héros dont Gotham a besoin dès à présent"
-
-#: data/com.github.danrabbit.harvey.appdata.xml.in:10
-msgid ""
-"Calculate and visualize color contrast. Harvey checks a given set of colors "
-"for WCAG contrast compliance."
-msgstr ""
-"Calculez et visualisez les contrastes de couleur. Harvey vérifie qu'un jeu "
-"de couleur est conforme aux recommandation de contraste WCAG."
-
-#: data/com.github.danrabbit.harvey.appdata.xml.in:12
-msgid "Pick colors from your display"
-msgstr "Sélectionnez des couleurs depuis votre écran"
-
-#: data/com.github.danrabbit.harvey.appdata.xml.in:13
-msgid "See explanations for different grades on hover"
-msgstr "Visualisez des explications pour les différents niveaux au survol"
-
-#: data/com.github.danrabbit.harvey.appdata.xml.in:14
-msgid "Quit with the handy shortcut Ctrl + Q"
-msgstr "Quittez avec le raccourci pratique Ctrl + Q"
-
-#: data/com.github.danrabbit.harvey.appdata.xml.in:15
-msgid "Join the contrast rebellion"
-msgstr "Rejoignez la rébellion du contraste"
-
-#: data/com.github.danrabbit.harvey.appdata.xml.in:24
-msgid "Update French translation thanks to @NathanBnm"
-msgstr "Mise à jour des traductions françaises grâce à @NathanBnm"
-
-#: data/com.github.danrabbit.harvey.appdata.xml.in:29
-msgid "Juno update!"
-msgstr "Mise à jour pour Juno !"
-
-#: data/com.github.danrabbit.harvey.appdata.xml.in:31
-msgid "Add a new A level"
-msgstr "Ajout d'un nouveau niveau A"
-
-#: data/com.github.danrabbit.harvey.appdata.xml.in:32
-msgid "Show explanations for grades on hover"
-msgstr "Affichage des explications pour les niveaux au survol"
-
-#: data/com.github.danrabbit.harvey.appdata.xml.in:33
-msgid "Live preview of color selector in main window"
-msgstr "Aperçu en tant réel du sélecteur de couleur dans la fenêtre principale"
-
-#: data/com.github.danrabbit.harvey.appdata.xml.in:34
-msgid "Code cleanups"
-msgstr "Amélioration du code"
-
-#: data/com.github.danrabbit.harvey.appdata.xml.in:40
-msgid "Add French and Spanish Translations"
-msgstr "Ajout des traductions françaises et espagnoles"
-
-#: data/com.github.danrabbit.harvey.appdata.xml.in:46
-msgid "Add HiDPI icons support"
-msgstr "Ajout du support des icônes HDPI"
-
-#: data/com.github.danrabbit.harvey.appdata.xml.in:47
-msgid "RTL text layout support"
-msgstr "Prise en charge de l'affichage du texte de droite à gauche"
-
-#: data/com.github.danrabbit.harvey.appdata.xml.in:48
-msgid "Now with automated testing"
-msgstr "Test automatique"
-
-#: data/com.github.danrabbit.harvey.appdata.xml.in:49
-msgid "Update to latest APIs; get ready for Juno"
-msgstr "Mise à jour vers les dernières APIs ; Préparation pour Juno"
-
-#: data/com.github.danrabbit.harvey.appdata.xml.in:89
-msgid "Daniel Foré"
-msgstr "Daniel Foré"
-
-#: data/com.github.danrabbit.harvey.desktop.in:4
-msgid "Calculate and visualize color contrast"
-msgstr "Calculez et visualisez les contrastes de couleurs"
-
-#: data/com.github.danrabbit.harvey.desktop.in:6
-msgid "com.github.danrabbit.harvey"
-msgstr "com.github.danrabbit.harvey"
-
-#: data/com.github.danrabbit.harvey.desktop.in:7
-msgid "contrast;color;"
-msgstr "contraste;couleur;"
 
 #: src/MainWindow.vala:54
 msgid "Foreground Color"
@@ -157,3 +68,71 @@ msgstr ""
 "utilisateurs ayant une vision d'environ 20/80. Les personnes atteintes d'une "
 "perte de vision supérieure à ce degré utilisent habituellement des "
 "technologies d'assistance."
+
+#~ msgid "The hero that Gotham needs right now"
+#~ msgstr "Le héros dont Gotham a besoin dès à présent"
+
+#~ msgid ""
+#~ "Calculate and visualize color contrast. Harvey checks a given set of "
+#~ "colors for WCAG contrast compliance."
+#~ msgstr ""
+#~ "Calculez et visualisez les contrastes de couleur. Harvey vérifie qu'un "
+#~ "jeu de couleur est conforme aux recommandation de contraste WCAG."
+
+#~ msgid "Pick colors from your display"
+#~ msgstr "Sélectionnez des couleurs depuis votre écran"
+
+#~ msgid "See explanations for different grades on hover"
+#~ msgstr "Visualisez des explications pour les différents niveaux au survol"
+
+#~ msgid "Quit with the handy shortcut Ctrl + Q"
+#~ msgstr "Quittez avec le raccourci pratique Ctrl + Q"
+
+#~ msgid "Join the contrast rebellion"
+#~ msgstr "Rejoignez la rébellion du contraste"
+
+#~ msgid "Update French translation thanks to @NathanBnm"
+#~ msgstr "Mise à jour des traductions françaises grâce à @NathanBnm"
+
+#~ msgid "Juno update!"
+#~ msgstr "Mise à jour pour Juno !"
+
+#~ msgid "Add a new A level"
+#~ msgstr "Ajout d'un nouveau niveau A"
+
+#~ msgid "Show explanations for grades on hover"
+#~ msgstr "Affichage des explications pour les niveaux au survol"
+
+#~ msgid "Live preview of color selector in main window"
+#~ msgstr ""
+#~ "Aperçu en tant réel du sélecteur de couleur dans la fenêtre principale"
+
+#~ msgid "Code cleanups"
+#~ msgstr "Amélioration du code"
+
+#~ msgid "Add French and Spanish Translations"
+#~ msgstr "Ajout des traductions françaises et espagnoles"
+
+#~ msgid "Add HiDPI icons support"
+#~ msgstr "Ajout du support des icônes HDPI"
+
+#~ msgid "RTL text layout support"
+#~ msgstr "Prise en charge de l'affichage du texte de droite à gauche"
+
+#~ msgid "Now with automated testing"
+#~ msgstr "Test automatique"
+
+#~ msgid "Update to latest APIs; get ready for Juno"
+#~ msgstr "Mise à jour vers les dernières APIs ; Préparation pour Juno"
+
+#~ msgid "Daniel Foré"
+#~ msgstr "Daniel Foré"
+
+#~ msgid "Calculate and visualize color contrast"
+#~ msgstr "Calculez et visualisez les contrastes de couleurs"
+
+#~ msgid "com.github.danrabbit.harvey"
+#~ msgstr "com.github.danrabbit.harvey"
+
+#~ msgid "contrast;color;"
+#~ msgstr "contraste;couleur;"
