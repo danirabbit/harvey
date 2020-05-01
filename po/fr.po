@@ -1,7 +1,7 @@
 # French translations for com.github.danrabbit.harvey package.
 # Copyright (C) 2019 THE com.github.danrabbit.harvey'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the com.github.danrabbit.harvey package.
-# NathanBnm, 2019.
+# Nathan Bonnemains (@NathanBnm), 2019.
 #
 msgid ""
 msgstr ""
@@ -9,14 +9,13 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-05-01 14:06+0200\n"
 "PO-Revision-Date: 2019-03-22 18:55+0100\n"
-"Last-Translator: NathanBnm\n"
+"Last-Translator: Nathan Bonnemains (@NathanBnm)\n"
 "Language-Team: Français\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 2.0.4\n"
 
 #: src/MainWindow.vala:48
 msgid "Harvey"
@@ -68,71 +67,3 @@ msgstr ""
 "utilisateurs ayant une vision d'environ 20/80. Les personnes atteintes d'une "
 "perte de vision supérieure à ce degré utilisent habituellement des "
 "technologies d'assistance."
-
-#~ msgid "The hero that Gotham needs right now"
-#~ msgstr "Le héros dont Gotham a besoin dès à présent"
-
-#~ msgid ""
-#~ "Calculate and visualize color contrast. Harvey checks a given set of "
-#~ "colors for WCAG contrast compliance."
-#~ msgstr ""
-#~ "Calculez et visualisez les contrastes de couleur. Harvey vérifie qu'un "
-#~ "jeu de couleur est conforme aux recommandation de contraste WCAG."
-
-#~ msgid "Pick colors from your display"
-#~ msgstr "Sélectionnez des couleurs depuis votre écran"
-
-#~ msgid "See explanations for different grades on hover"
-#~ msgstr "Visualisez des explications pour les différents niveaux au survol"
-
-#~ msgid "Quit with the handy shortcut Ctrl + Q"
-#~ msgstr "Quittez avec le raccourci pratique Ctrl + Q"
-
-#~ msgid "Join the contrast rebellion"
-#~ msgstr "Rejoignez la rébellion du contraste"
-
-#~ msgid "Update French translation thanks to @NathanBnm"
-#~ msgstr "Mise à jour des traductions françaises grâce à @NathanBnm"
-
-#~ msgid "Juno update!"
-#~ msgstr "Mise à jour pour Juno !"
-
-#~ msgid "Add a new A level"
-#~ msgstr "Ajout d'un nouveau niveau A"
-
-#~ msgid "Show explanations for grades on hover"
-#~ msgstr "Affichage des explications pour les niveaux au survol"
-
-#~ msgid "Live preview of color selector in main window"
-#~ msgstr ""
-#~ "Aperçu en tant réel du sélecteur de couleur dans la fenêtre principale"
-
-#~ msgid "Code cleanups"
-#~ msgstr "Amélioration du code"
-
-#~ msgid "Add French and Spanish Translations"
-#~ msgstr "Ajout des traductions françaises et espagnoles"
-
-#~ msgid "Add HiDPI icons support"
-#~ msgstr "Ajout du support des icônes HDPI"
-
-#~ msgid "RTL text layout support"
-#~ msgstr "Prise en charge de l'affichage du texte de droite à gauche"
-
-#~ msgid "Now with automated testing"
-#~ msgstr "Test automatique"
-
-#~ msgid "Update to latest APIs; get ready for Juno"
-#~ msgstr "Mise à jour vers les dernières APIs ; Préparation pour Juno"
-
-#~ msgid "Daniel Foré"
-#~ msgstr "Daniel Foré"
-
-#~ msgid "Calculate and visualize color contrast"
-#~ msgstr "Calculez et visualisez les contrastes de couleurs"
-
-#~ msgid "com.github.danrabbit.harvey"
-#~ msgstr "com.github.danrabbit.harvey"
-
-#~ msgid "contrast;color;"
-#~ msgstr "contraste;couleur;"
