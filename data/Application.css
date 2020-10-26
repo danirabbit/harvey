@@ -17,10 +17,6 @@
 * Boston, MA 02110-1301 USA
 */
 
-grid.titlebar {
-	padding: 0;
-}
-
 .grade {
     color: #fff;
     background-color: alpha (#333, 0.9);
@@ -45,34 +41,4 @@ grid.titlebar {
 .results:dir(rtl) {
     border-bottom-left-radius: 3px;
     border-right: solid 1px shade (@colorBackground, 0.8);
-}
-
-.titlebar {
-    border: none;
-}
-
-.input-header:dir(ltr) {
-    border-top-right-radius: 0;
-}
-
-.input-header:dir(rtl) {
-    border-top-left-radius: 0;
-}
-
-.output-header {
-    background-color: @colorBackground;
-    box-shadow:
-        inset 1px 0 0 0 shade (@colorBackground, 1.07),
-        inset -1px 0 0 0 shade (@colorBackground, 1.07),
-        inset 0 1px 0 0 shade (@colorBackground, 1.2);
-}
-
-.output-header:dir(ltr) {
-    border-left: solid 1px shade (@colorBackground, 0.8);
-    border-top-left-radius: 0;
-}
-
-.output-header:dir(rtl) {
-    border-right: solid 1px shade (@colorBackground, 0.8);
-    border-top-right-radius: 0;
 }

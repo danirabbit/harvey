@@ -17,12 +17,11 @@
 * Boston, MA 02110-1301 USA
 */
 
-public class MainWindow : Gtk.Window {
+public class MainWindow : Hdy.Window {
     private const string RESULTS_CSS = """
         @define-color colorForeground %s;
         @define-color colorBackground %s;
 
-        .output-header,
         .results {
             transition: all 250ms ease-in-out;
         }
@@ -51,6 +50,8 @@ public class MainWindow : Gtk.Window {
     }
 
     construct {
+        Hdy.init ();
+
         var fg_label = new Gtk.Label (_("Foreground Color"));
         fg_label.get_style_context ().add_class ("h4");
         fg_label.xalign = 0;
@@ -70,9 +71,11 @@ public class MainWindow : Gtk.Window {
         bg_entry.placeholder_text = "rgb (110, 200, 230)";
         bg_entry.set_icon_from_icon_name (Gtk.EntryIconPosition.SECONDARY, "media-eq-symbolic");
 
-        var input_grid = new Gtk.Grid ();
-        input_grid.orientation = Gtk.Orientation.VERTICAL;
-        input_grid.margin = 12;
+        var input_grid = new Gtk.Grid () {
+            orientation = Gtk.Orientation.VERTICAL,
+            margin = 12,
+            vexpand = true
+        };
         input_grid.add (fg_label);
         input_grid.add (fg_entry);
         input_grid.add (bg_label);
@@ -105,40 +108,25 @@ public class MainWindow : Gtk.Window {
         results_grid.attach (aa_level, 1, 1);
         results_grid.attach (aaa_level, 2, 1);
 
-        var grid = new Gtk.Grid ();
-        grid.add (input_grid);
-        grid.add (results_grid);
-
-        var input_header = new Gtk.HeaderBar ();
-        input_header.decoration_layout = "close:";
-        input_header.show_close_button = true;
+        var input_header = new Hdy.HeaderBar () {
+           decoration_layout = "close:",
+           show_close_button = true
+        };
 
         var input_header_context = input_header.get_style_context ();
         input_header_context.add_class ("input-header");
-        input_header_context.add_class ("titlebar");
         input_header_context.add_class ("default-decoration");
         input_header_context.add_class (Gtk.STYLE_CLASS_FLAT);
 
-        var output_header = new Gtk.HeaderBar ();
-        output_header.hexpand = true;
+        var grid = new Gtk.Grid ();
+        grid.attach (input_header, 0, 0);
+        grid.attach (input_grid, 0, 1);
+        grid.attach (results_grid, 1, 0, 1, 2);
 
-        var output_header_context = output_header.get_style_context ();
-        output_header_context.add_class ("output-header");
-        output_header_context.add_class ("titlebar");
-        output_header_context.add_class ("default-decoration");
-        output_header_context.add_class (Gtk.STYLE_CLASS_FLAT);
+        var window_handle = new Hdy.WindowHandle ();
+        window_handle.add (grid);
 
-        var header_grid = new Gtk.Grid ();
-        header_grid.add (input_header);
-        header_grid.add (output_header);
-
-        var sizegroup = new Gtk.SizeGroup (Gtk.SizeGroupMode.HORIZONTAL);
-        sizegroup.add_widget (input_grid);
-        sizegroup.add_widget (input_header);
-
-        add (grid);
-        get_style_context ().add_class ("rounded");
-        set_titlebar (header_grid);
+        add (window_handle);
 
         fg_entry.icon_press.connect ((pos, event) => {
             if (pos == Gtk.EntryIconPosition.SECONDARY) {
