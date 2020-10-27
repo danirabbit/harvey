@@ -10,7 +10,7 @@ jobs:
       options: --privileged
     steps:
     - uses: actions/checkout@v2
-    - uses: bilelmoussaoui/flatpak-github-actions@v1
+    - uses: bilelmoussaoui/flatpak-github-actions@v2
       with:
         bundle: "com.github.danrabbit.harvey.flatpak"
         manifest-path: "com.github.danrabbit.harvey.yml"
