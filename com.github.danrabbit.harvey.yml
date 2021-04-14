@@ -1,9 +1,7 @@
 app-id: com.github.danrabbit.harvey
-runtime: org.gnome.Platform
-runtime-version: '3.36'
-base: io.elementary.BaseApp
-base-version: juno-19.08
-sdk: org.gnome.Sdk
+runtime: io.elementary.Platform
+runtime-version: '0.10.0'
+sdk: io.elementary.Sdk
 command: com.github.danrabbit.harvey
 finish-args:
   - '--share=ipc'
@@ -15,13 +13,6 @@ finish-args:
 
   - '--metadata=X-DConf=migrate-path=/com/github/danrabbit/harvey/'
 modules:
-  - name: handy
-    buildsystem: meson
-    sources:
-      - type: git
-        url: https://gitlab.gnome.org/GNOME/libhandy.git
-        tag: '1.0.0'
-
   - name: harvey
     buildsystem: meson
     sources:
