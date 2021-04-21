@@ -1,19 +1,22 @@
 name: CI
 
-on: [push, pull_request]
+on: [pull_request]
 
 jobs:
   flatpak:
     runs-on: ubuntu-latest
     container:
-      image: docker.io/bilelmoussaoui/flatpak-github-actions
+      image: bilelmoussaoui/flatpak-github-actions
       options: --privileged
     steps:
-    - uses: actions/checkout@v2
-    - uses: bilelmoussaoui/flatpak-github-actions@v3
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Build
+      uses: bilelmoussaoui/flatpak-github-actions@v3
       with:
-        bundle: "com.github.danrabbit.harvey.flatpak"
-        manifest-path: "com.github.danrabbit.harvey.yml"
+        bundle: harvey.flatpak
+        manifest-path: com.github.danrabbit.harvey.yml
         run-tests: true
         repository-name: elementary
         repository-url: https://flatpak.elementary.io/elementary.flatpakrepo
