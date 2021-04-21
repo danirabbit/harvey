@@ -1,6 +1,6 @@
 app-id: com.github.danrabbit.harvey
 runtime: io.elementary.Platform
-runtime-version: '0.10.0'
+runtime-version: 'daily'
 sdk: io.elementary.Sdk
 command: com.github.danrabbit.harvey
 finish-args:
