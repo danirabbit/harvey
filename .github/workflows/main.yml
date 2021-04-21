@@ -19,7 +19,7 @@ jobs:
         manifest-path: com.github.danrabbit.harvey.yml
         run-tests: true
         repository-name: elementary
-        repository-url: https://flatpak.elementary.io/elementary.flatpakrepo
+        repository-url: https://flatpak.elementary.io/appcenter.flatpakrepo
         cache-key: "flatpak-builder-${{ github.sha }}"
 
   lint:
