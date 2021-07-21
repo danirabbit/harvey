@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.danrabbit.harvey\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-15 10:49-0800\n"
+"POT-Creation-Date: 2021-07-21 13:42-0700\n"
 "PO-Revision-Date: 2018-01-15 10:49-0800\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -18,53 +18,45 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
 "%100==4 ? 2 : 3);\n"
 
-#: data/com.github.danrabbit.harvey.appdata.xml.in:7
-#: data/com.github.danrabbit.harvey.desktop.in:3 src/MainWindow.vala:45
+#: src/MainWindow.vala:33
 msgid "Harvey"
 msgstr ""
 
-#: data/com.github.danrabbit.harvey.appdata.xml.in:8
-msgid "The hero that Gotham needs right now"
-msgstr ""
-
-#: data/com.github.danrabbit.harvey.appdata.xml.in:10
-msgid ""
-"Calculate and visualize color contrast. Harvey checks a given set of colors "
-"for WCAG contrast compliance."
-msgstr ""
-
-#: data/com.github.danrabbit.harvey.appdata.xml.in:12
-msgid "Pick colors from your display"
-msgstr ""
-
-#: data/com.github.danrabbit.harvey.appdata.xml.in:13
-msgid "Quit with the handy shortcut Ctrl + Q"
-msgstr ""
-
-#: data/com.github.danrabbit.harvey.appdata.xml.in:14
-msgid "Join the contrast rebellion"
-msgstr ""
-
-#: data/com.github.danrabbit.harvey.appdata.xml.in:38
-msgid "Daniel Foré"
-msgstr ""
-
-#: data/com.github.danrabbit.harvey.desktop.in:4
-msgid "Calculate and visualize color contrast"
-msgstr ""
-
-#: data/com.github.danrabbit.harvey.desktop.in:6
-msgid "com.github.danrabbit.harvey"
-msgstr ""
-
-#: data/com.github.danrabbit.harvey.desktop.in:7
-msgid "contrast;color;"
-msgstr ""
-
-#: src/MainWindow.vala:53
+#: src/MainWindow.vala:41
 msgid "Foreground Color"
 msgstr ""
 
-#: src/MainWindow.vala:57
+#: src/MainWindow.vala:45
 msgid "Background Color"
+msgstr ""
+
+#: src/MainWindow.vala:79
+msgid "3:1"
+msgstr ""
+
+#: src/MainWindow.vala:79
+msgid ""
+"The minimum level recommended by ISO-9241-3 and ANSI-HFES-100-1988 for "
+"standard text and vision"
+msgstr ""
+
+#: src/MainWindow.vala:83
+msgid "4.5:1"
+msgstr ""
+
+#: src/MainWindow.vala:83
+msgid ""
+"Compensates for the loss in contrast that results from moderately low visual "
+"acuity, color deficiencies, or aging."
+msgstr ""
+
+#: src/MainWindow.vala:87
+msgid "7:1"
+msgstr ""
+
+#: src/MainWindow.vala:87
+msgid ""
+"Compensates for the loss in contrast sensitivity usually experienced by "
+"users with about 20/80 vision. People with more than this degree of vision "
+"loss usually use assistive technologies."
 msgstr ""
