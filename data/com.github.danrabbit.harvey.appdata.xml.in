@@ -19,6 +19,16 @@
         <binary>com.github.danrabbit.harvey</binary>
     </provides>
     <releases>
+        <release version="1.0.1" date="2021-5-12">
+            <description>
+              <p>Odin update!</p>
+              <ul>
+                <li>Update to latest libraries</li>
+                <li>Update categories</li>
+                <li>Code cleanups</li>
+              </ul>
+            </description>
+        </release>
         <release version="1.0.0" date="2018-7-3">
             <description>
               <p>Juno update!</p>
@@ -48,7 +58,7 @@
     </releases>
     <screenshots>
         <screenshot type="default">
-            <image>https://raw.githubusercontent.com/danrabbit/harvey/master/data/screenshot.png</image>
+            <image>https://raw.githubusercontent.com/danrabbit/harvey/main/data/screenshot.png</image>
         </screenshot>
     </screenshots>
   <content_rating type="oars-1.1">
@@ -88,5 +98,6 @@
         <value key="x-appcenter-color-primary">#fff</value>
         <value key="x-appcenter-color-primary-text">#333</value>
         <value key="x-appcenter-suggested-price">3</value>
+        <value key="x-appcenter-stripe">pk_live_wyW2wqcVA8mBoKajo3Q62iQs</value>
     </custom>
 </component>
