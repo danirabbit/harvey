@@ -19,7 +19,12 @@
         <binary>com.github.danrabbit.harvey</binary>
     </provides>
     <releases>
-        <release version="1.0.1" date="2021-5-12">
+        <release version="1.0.2" date="2021-07-21">
+            <description>
+              <p>Add Portuguese translations</p>
+            </description>
+        </release>
+        <release version="1.0.1" date="2021-05-12">
             <description>
               <p>Odin update!</p>
               <ul>
@@ -29,7 +34,7 @@
               </ul>
             </description>
         </release>
-        <release version="1.0.0" date="2018-7-3">
+        <release version="1.0.0" date="2018-07-3">
             <description>
               <p>Juno update!</p>
               <ul>
@@ -40,7 +45,7 @@
               </ul>
             </description>
         </release>
-        <release version="0.1.8" date="2018-1-15">
+        <release version="0.1.8" date="2018-01-15">
             <description>
               <p>Add French and Spanish Translations</p>
             </description>
@@ -92,7 +97,7 @@
   </content_rating>
     <translation type="gettext">com.github.danrabbit.harvey</translation>
     <developer_name>Daniel Foré</developer_name>
-    <url type="homepage">http://danielfore.com</url>
+    <url type="homepage">https://github.com/danrabbit</url>
     <url type="bugtracker">https://github.com/danrabbit/harvey/issues</url>
     <custom>
         <value key="x-appcenter-color-primary">#fff</value>
