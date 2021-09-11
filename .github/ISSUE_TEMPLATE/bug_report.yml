@@ -57,14 +57,13 @@ body:
 
   - type: textarea
     attributes:
-      label: Relevant log output
+      label: Log output (Optional)
       description: |
-          If applicable, please share logs or error messages:
           * Fails without warning? Get and share debug logs by following: https://elementary.io/docs/code/os-dev#debug-logs
           * Unexpectedly quits or stops? Get and share crash logs by following: https://elementary.io/docs/code/os-dev#inspecting-crashes
       render: shell
 
   - type: textarea
     attributes:
-      label: Hardware Info
+      label: Hardware Info (Optional)
       description: Relevant hardware information such as graphics drivers, unconventional setups, etc.
