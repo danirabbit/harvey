@@ -1,0 +1,69 @@
+name: Bug Report
+description: Report an unexpected behavior or failure
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+          * Please read and follow these tips: https://docs.elementary.io/contributor-guide/feedback/reporting-issues
+          * Be sure to search open and closed issues for duplicates
+          * A detailed report will help us address your issue more quickly. Do your best!
+      
+  - type: textarea
+    attributes:
+      label: What Happened?
+      description: Describe the issue in detail
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Expected Behavior
+      description: Explain how what happened is different from what you wanted to happen
+    validations:
+      required: false
+
+  - type: textarea
+    attributes:
+      label: Steps to Reproduce
+      description: Explain the exact steps one would take to experience the issue. If applicable, add screenshots or screen recordings.
+    validations:
+      required: false
+
+  - type: textarea
+    attributes:
+      label: Relevant log output
+      description: |
+          If applicable, please share logs or error messages:
+          * Fails without warning? Get and share debug logs by following: https://elementary.io/docs/code/os-dev#debug-logs
+          * Unexpectedly quits or stops? Get and share crash logs by following: https://elementary.io/docs/code/os-dev#inspecting-crashes
+      render: shell
+
+  - type: dropdown
+    attributes:
+      label: OS Version
+      description: The version of elementary OS you are using, or other operating system
+      options:
+        - 6.x (Odin)
+        - 5.x (Hera)
+        - Other Linux
+    validations:
+      required: true
+
+  - type: dropdown
+    attributes:
+      label: Software Version
+      description: The version of the software you are using
+      options:
+        - Latest release (I have run all updates)
+        - Compiled from git
+        - Older release (I have not run all updates)
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Hardware Info
+      description: Relevant hardware information such as graphics drivers, unconventional setups, etc.
+    validations:
+      required: false
