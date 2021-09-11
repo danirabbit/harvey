@@ -5,7 +5,7 @@ body:
   - type: markdown
     attributes:
       value: |
-          * Please read and follow these tips: https://docs.elementary.io/contributor-guide/feedback/reporting-issues
+          * Please read these [Tips](https://docs.elementary.io/contributor-guide/feedback/reporting-issues)
           * Be sure to search open and closed issues for duplicates
 
   - type: textarea
@@ -20,16 +20,16 @@ body:
       label: Steps to Reproduce
       description: Explain the exact steps one would take to experience the issue. If applicable, add screenshots or screen recordings.
       placeholder: |
-          1. Went here
-          2. Did this
-          3. Clicked that
+          1. Went here 
+          2. Did this 
+          3. Clicked that 
     validations:
       required: true
 
   - type: textarea
     attributes:
       label: Expected Behavior
-      description: Explain how what happened is different from what you wanted to happen
+      description: Explain how what happened is different from what you wanted to happen.
     validations:
       required: true
 
