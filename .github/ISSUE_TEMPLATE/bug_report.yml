@@ -7,12 +7,18 @@ body:
       value: |
           * Please read and follow these tips: https://docs.elementary.io/contributor-guide/feedback/reporting-issues
           * Be sure to search open and closed issues for duplicates
-          * A detailed report will help us address your issue more quickly. Do your best!
-      
+
   - type: textarea
     attributes:
       label: What Happened?
-      description: Describe the issue in detail
+      description: A detailed description of unexpected behavior will help us address your issue more quickly. Do your best!
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Steps to Reproduce
+      description: Explain the exact steps one would take to experience the issue. If applicable, add screenshots or screen recordings.
     validations:
       required: true
 
@@ -21,23 +27,7 @@ body:
       label: Expected Behavior
       description: Explain how what happened is different from what you wanted to happen
     validations:
-      required: false
-
-  - type: textarea
-    attributes:
-      label: Steps to Reproduce
-      description: Explain the exact steps one would take to experience the issue. If applicable, add screenshots or screen recordings.
-    validations:
-      required: false
-
-  - type: textarea
-    attributes:
-      label: Relevant log output
-      description: |
-          If applicable, please share logs or error messages:
-          * Fails without warning? Get and share debug logs by following: https://elementary.io/docs/code/os-dev#debug-logs
-          * Unexpectedly quits or stops? Get and share crash logs by following: https://elementary.io/docs/code/os-dev#inspecting-crashes
-      render: shell
+      required: true
 
   - type: dropdown
     attributes:
@@ -63,7 +53,14 @@ body:
 
   - type: textarea
     attributes:
+      label: Relevant log output
+      description: |
+          If applicable, please share logs or error messages:
+          * Fails without warning? Get and share debug logs by following: https://elementary.io/docs/code/os-dev#debug-logs
+          * Unexpectedly quits or stops? Get and share crash logs by following: https://elementary.io/docs/code/os-dev#inspecting-crashes
+      render: shell
+
+  - type: textarea
+    attributes:
       label: Hardware Info
       description: Relevant hardware information such as graphics drivers, unconventional setups, etc.
-    validations:
-      required: false
