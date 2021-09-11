@@ -19,6 +19,10 @@ body:
     attributes:
       label: Steps to Reproduce
       description: Explain the exact steps one would take to experience the issue. If applicable, add screenshots or screen recordings.
+      placeholder: |
+          1. Went here
+          2. Did this
+          3. Clicked that
     validations:
       required: true
 
