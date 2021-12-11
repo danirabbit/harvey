@@ -1,6 +1,6 @@
 /*
  * SPDX-License-Identifier: GPL-3.0-or-later
- * SPDX-FileCopyrightText: 2017-2021 Daniel Foré (https://github.com/danrabbit)
+ * SPDX-FileCopyrightText: 2017-2021 Danielle Foré (https://github.com/danrabbit)
  */
 
 public class GradeLabel : Gtk.Grid {
@@ -18,28 +18,29 @@ public class GradeLabel : Gtk.Grid {
     }
 
     public GradeLabel (string level) {
-        Object (
-            height_request: 76,
-            width_request: 76,
-            level: level,
-            margin: 12,
-            margin_bottom: 24
-        );
+        Object (level: level);
     }
 
     construct {
-        var level = new Gtk.Label ("<small><b>%s</b></small>".printf (level));
-        level.margin_top = 20;
-        level.width_request = 76;
-        level.use_markup = true;
+        var level = new Gtk.Label ("<small><b>%s</b></small>".printf (level)) {
+            margin_top = 20,
+            width_request = 76,
+            use_markup = true
+        };
 
-        icon = new Gtk.Image ();
-        icon.icon_size = Gtk.IconSize.LARGE_TOOLBAR;
-        icon.icon_name = "object-select-symbolic";
+        icon = new Gtk.Image () {
+            icon_name = "object-select-symbolic",
+            pixel_size = 24
+        };
 
-        orientation = Gtk.Orientation.VERTICAL;
-        get_style_context ().add_class ("grade");
-        add (level);
-        add (icon);
+        height_request = 76;
+        width_request = 76;
+        margin_top = 12;
+        margin_end = 12;
+        margin_bottom = 24;
+        margin_start = 12;
+        add_css_class ("grade");
+        attach (level, 0, 0);
+        attach (icon, 0, 1);
     }
 }

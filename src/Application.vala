@@ -22,15 +22,7 @@ public class Harvey : Gtk.Application {
         }
 
         var app_window = new MainWindow (this);
-
-        var window_x = settings.get_int ("window-x");
-        var window_y = settings.get_int ("window-y");
-
-        if (window_x != -1 || window_y != -1) {
-            app_window.move (window_x, window_y);
-        }
-
-        app_window.show_all ();
+        app_window.present ();
 
         var quit_action = new SimpleAction ("quit", null);
 
@@ -39,7 +31,7 @@ public class Harvey : Gtk.Application {
 
         var provider = new Gtk.CssProvider ();
         provider.load_from_resource ("com/github/danrabbit/harvey/Application.css");
-        Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+        Gtk.StyleContext.add_provider_for_display (Gdk.Display.get_default (), provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
         quit_action.activate.connect (() => {
             if (app_window != null) {

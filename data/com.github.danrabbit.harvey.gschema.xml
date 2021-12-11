@@ -3,16 +3,6 @@
   <schema path="/com/github/danrabbit/harvey/"
   id="com.github.danrabbit.harvey"
   gettext-domain="com.github.danrabbit.harvey">
-    <key name="window-x" type="i">
-      <default>-1</default>
-      <summary>Most recent x position of Harvey</summary>
-      <description>Most recent x position of Harvey</description>
-    </key>
-    <key name="window-y" type="i">
-      <default>-1</default>
-      <summary>Most recent y position of Harvey</summary>
-      <description>Most recent y position of Harvey</description>
-    </key>
     <key name="bg-color" type="s">
       <default>"#aedede"</default>
       <summary>Last valid background color</summary>
