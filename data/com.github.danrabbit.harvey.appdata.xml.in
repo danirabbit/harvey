@@ -17,6 +17,8 @@
     </description>
     <provides>
         <binary>com.github.danrabbit.harvey</binary>
+        <!-- Legacy RDNN -->
+        <id>com.github.danrabbit.harvey.desktop</id>
     </provides>
     <releases>
         <release version="1.0.2" date="2021-07-21">
