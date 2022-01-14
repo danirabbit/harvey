@@ -16,6 +16,7 @@ public class MainWindow : Hdy.Window {
     private Gdk.RGBA gdk_color;
     private Gtk.Entry bg_entry;
     private Gtk.Entry fg_entry;
+    private Gtk.Button invert_colors;
     private Gtk.Label results_label;
     private GradeLabel a_level;
     private GradeLabel aa_level;
@@ -33,6 +34,12 @@ public class MainWindow : Hdy.Window {
             title: _("Harvey"),
             width_request: 700
         );
+    }
+
+    void invert_clicked () {
+        var temp = fg_entry.text;
+        fg_entry.text = bg_entry.text;
+        bg_entry.text = temp;
     }
 
     construct {
@@ -57,6 +64,10 @@ public class MainWindow : Hdy.Window {
         bg_entry.placeholder_text = "rgb (110, 200, 230)";
         bg_entry.set_icon_from_icon_name (Gtk.EntryIconPosition.SECONDARY, "media-eq-symbolic");
 
+        invert_colors = new Gtk.Button.with_label (_("Invert Colors"));
+        invert_colors.margin_top = 20;
+        invert_colors.clicked.connect (invert_clicked);
+
         var input_grid = new Gtk.Grid () {
             orientation = Gtk.Orientation.VERTICAL,
             margin = 12,
@@ -66,6 +77,7 @@ public class MainWindow : Hdy.Window {
         input_grid.add (fg_entry);
         input_grid.add (bg_label);
         input_grid.add (bg_entry);
+        input_grid.add (invert_colors);
 
         results_label = new Gtk.Label ("12:1");
         results_label.expand = true;
