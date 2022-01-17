@@ -36,12 +36,6 @@ public class MainWindow : Hdy.Window {
         );
     }
 
-    void invert_clicked () {
-        var temp = fg_entry.text;
-        fg_entry.text = bg_entry.text;
-        bg_entry.text = temp;
-    }
-
     construct {
         Hdy.init ();
 
@@ -66,7 +60,11 @@ public class MainWindow : Hdy.Window {
 
         invert_colors = new Gtk.Button.with_label (_("Invert Colors"));
         invert_colors.margin_top = 20;
-        invert_colors.clicked.connect (invert_clicked);
+        invert_colors.clicked.connect (() => {
+            var temp = fg_entry.text;
+            fg_entry.text = bg_entry.text;
+            bg_entry.text = temp;
+        });
 
         var input_grid = new Gtk.Grid () {
             orientation = Gtk.Orientation.VERTICAL,
