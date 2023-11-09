@@ -98,7 +98,9 @@
     <content_attribute id="money-gambling">none</content_attribute>
   </content_rating>
     <translation type="gettext">com.github.danrabbit.harvey</translation>
-    <developer_name>Daniel Foré</developer_name>
+    <developer>
+      <name>Daniel Foré</name>
+    </developer>
     <url type="homepage">https://github.com/danrabbit</url>
     <url type="bugtracker">https://github.com/danrabbit/harvey/issues</url>
     <custom>
