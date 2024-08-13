@@ -11,8 +11,18 @@ asresources = gnome.compile_resources(
     c_name: 'as'
 )
 
+config_data = configuration_data()
+config_data.set_quoted('GETTEXT_PACKAGE', meson.project_name())
+config_data.set_quoted('LOCALEDIR', get_option('prefix') / get_option('localedir'))
+config_file = configure_file(
+    input: 'src/Config.vala.in',
+    output: 'Config.vala',
+    configuration: config_data
+)
+
 executable(
     meson.project_name(),
+    config_file,
     'src/Application.vala',
     'src/GradeLabel.vala',
     'src/MainWindow.vala',
