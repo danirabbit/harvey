@@ -15,6 +15,22 @@ public class Harvey : Gtk.Application {
         settings = new Settings ("io.github.danirabbit.harvey");
     }
 
+    protected override void startup () {
+        base.startup ();
+
+        // Follow elementary OS-wide dark preference
+        var granite_settings = Granite.Settings.get_default ();
+        var gtk_settings = Gtk.Settings.get_default ();
+
+        granite_settings.bind_property ("prefers-color-scheme", gtk_settings, "gtk-application-prefer-dark-theme",
+            BindingFlags.DEFAULT | BindingFlags.SYNC_CREATE,
+            ((binding, granite_prop, ref gtk_prop) => {
+                gtk_prop.set_boolean ((Granite.Settings.ColorScheme) granite_prop == Granite.Settings.ColorScheme.DARK);
+                return true;
+            })
+        );
+    }
+
     protected override void activate () {
         if (get_windows ().length () > 0) {
             get_windows ().data.present ();
