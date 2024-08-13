@@ -1,4 +1,4 @@
-project('com.github.danrabbit.harvey', 'vala', 'c')
+project('io.github.danirabbit.harvey', 'vala', 'c')
 
 gnome = import('gnome')
 i18n = import('i18n')

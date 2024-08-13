@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Copyright 2017 Daniel Foré <daniel@elementary.io> -->
+<!-- Copyright 2017-2024 Danielle Foré <danielle@elementary.io> -->
 <component type="desktop-application">
-    <id>com.github.danrabbit.harvey</id>
+    <id>io.github.danirabbit.harvey</id>
     <metadata_license>CC0-1.0</metadata_license>
     <project_license>GPL-3.0+</project_license>
     <name>Harvey</name>
@@ -16,9 +16,9 @@
         </ul>
     </description>
     <provides>
-        <binary>com.github.danrabbit.harvey</binary>
+        <binary>io.github.danirabbit.harvey</binary>
         <!-- Legacy RDNN -->
-        <id>com.github.danrabbit.harvey.desktop</id>
+        <id>io.github.danirabbit.harvey.desktop</id>
     </provides>
     <releases>
         <release version="1.0.2" date="2021-07-21">
@@ -65,7 +65,7 @@
     </releases>
     <screenshots>
         <screenshot type="default">
-            <image>https://raw.githubusercontent.com/danrabbit/harvey/main/data/screenshot.png</image>
+            <image>https://raw.githubusercontent.com/danirabbit/harvey/main/data/screenshot.png</image>
         </screenshot>
     </screenshots>
   <content_rating type="oars-1.1">
@@ -97,12 +97,12 @@
     <content_attribute id="money-purchasing">none</content_attribute>
     <content_attribute id="money-gambling">none</content_attribute>
   </content_rating>
-    <translation type="gettext">com.github.danrabbit.harvey</translation>
-    <developer id="com.github.danirabbit">
+    <translation type="gettext">io.github.danirabbit.harvey</translation>
+    <developer id="io.github.danirabbit">
       <name>Danielle Foré</name>
     </developer>
-    <url type="homepage">https://github.com/danrabbit</url>
-    <url type="bugtracker">https://github.com/danrabbit/harvey/issues</url>
+    <url type="homepage">https://github.com/danirabbit</url>
+    <url type="bugtracker">https://github.com/danirabbit/harvey/issues</url>
     <custom>
         <value key="x-appcenter-color-primary">#fff</value>
         <value key="x-appcenter-color-primary-text">#333</value>

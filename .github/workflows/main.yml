@@ -19,7 +19,7 @@ jobs:
         uses: bilelmoussaoui/flatpak-github-actions/flatpak-builder@v3
         with:
           bundle: harvey.flatpak
-          manifest-path: com.github.danrabbit.harvey.yml
+          manifest-path: io.github.danirabbit.harvey.yml
           run-tests: true
           repository-name: appcenter
           repository-url: https://flatpak.elementary.io/repo.flatpakrepo

@@ -1,8 +1,8 @@
 [Desktop Entry]
 Name=Harvey
 Comment=Calculate and visualize color contrast
-Exec=com.github.danrabbit.harvey
-Icon=com.github.danrabbit.harvey
+Exec=io.github.danirabbit.harvey
+Icon=io.github.danirabbit.harvey
 Keywords=contrast;color;
 Terminal=false
 Type=Application
