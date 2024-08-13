@@ -1,6 +1,6 @@
 app-id: io.github.danirabbit.harvey
 runtime: io.elementary.Platform
-runtime-version: '6'
+runtime-version: '8'
 sdk: io.elementary.Sdk
 command: io.github.danirabbit.harvey
 finish-args:
