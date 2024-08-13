@@ -1,6 +1,6 @@
 /*
  * SPDX-License-Identifier: GPL-3.0-or-later
- * SPDX-FileCopyrightText: 2017-2021 Daniel Foré (https://github.com/danrabbit)
+ * SPDX-FileCopyrightText: 2017-2024 Danielle Foré (https://github.com/danirabbit)
  */
 
 public class MainWindow : Hdy.Window {
@@ -28,7 +28,7 @@ public class MainWindow : Hdy.Window {
         Object (
             application: application,
             height_request: 500,
-            icon_name: "com.github.danrabbit.harvey",
+            icon_name: "io.github.danirabbit.harvey",
             resizable: false,
             title: _("Harvey"),
             width_request: 700

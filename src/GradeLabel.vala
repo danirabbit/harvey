@@ -1,6 +1,6 @@
 /*
  * SPDX-License-Identifier: GPL-3.0-or-later
- * SPDX-FileCopyrightText: 2017-2021 Daniel Foré (https://github.com/danrabbit)
+ * SPDX-FileCopyrightText: 2017-2024 Danielle Foré (https://github.com/danirabbit)
  */
 
 public class GradeLabel : Gtk.Grid {

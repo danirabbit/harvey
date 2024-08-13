@@ -1,8 +1,8 @@
-app-id: com.github.danrabbit.harvey
+app-id: io.github.danirabbit.harvey
 runtime: io.elementary.Platform
 runtime-version: '6'
 sdk: io.elementary.Sdk
-command: com.github.danrabbit.harvey
+command: io.github.danirabbit.harvey
 finish-args:
   - '--share=ipc'
   - '--socket=fallback-x11'
