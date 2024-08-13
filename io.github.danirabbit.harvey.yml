@@ -10,8 +10,6 @@ finish-args:
 
   # needed for perfers-color-scheme
   - '--system-talk-name=org.freedesktop.Accounts'
-
-  - '--metadata=X-DConf=migrate-path=/com/github/danrabbit/harvey/'
 modules:
   - name: harvey
     buildsystem: meson
