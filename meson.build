@@ -20,6 +20,7 @@ executable(
     dependencies: [
         dependency('glib-2.0'),
         dependency('gobject-2.0'),
+        dependency('granite', version: '>= 5.4.0'),
         dependency('gtk+-3.0'),
         dependency('libhandy-1', version: '>= 0.90.0'),
         meson.get_compiler('c').find_library('m', required : false)

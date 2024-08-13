@@ -11,8 +11,9 @@ The hero that Gotham needs. Harvey is a color contrast checker. It checks a give
 
 
 You'll need the following dependencies to build:
+* libgranite-dev (>= 5.4.0)
 * libgtk-3-dev
-* libhandy-1-dev
+* libhandy-1-dev (>= 0.90.0)
 * meson
 * valac
 
