@@ -17,11 +17,18 @@
 * Boston, MA 02110-1301 USA
 */
 
-.grade {
+grade {
     color: #fff;
     background-color: alpha(#333, 0.9);
     border-radius: 50%;
     box-shadow: 0 1px shade(@colorBackground, 1.15);
+    min-height: 76px;
+    min-width: 76px;
+}
+
+grade label {
+    font-weight: bold;
+    margin-top: 20px;
 }
 
 .results {
