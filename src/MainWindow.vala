@@ -36,8 +36,6 @@ public class MainWindow : Hdy.Window {
     }
 
     construct {
-        Hdy.init ();
-
         var fg_label = new Gtk.Label (_("Foreground Color"));
         fg_label.get_style_context ().add_class ("h4");
         fg_label.xalign = 0;
@@ -113,6 +111,7 @@ public class MainWindow : Hdy.Window {
         window_handle.add (grid);
 
         add (window_handle);
+        show_all ();
 
         fg_entry.icon_press.connect ((pos, event) => {
             if (pos == Gtk.EntryIconPosition.SECONDARY) {
