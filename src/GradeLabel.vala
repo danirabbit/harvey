@@ -18,13 +18,7 @@ public class GradeLabel : Gtk.Box {
     }
 
     public GradeLabel (string level) {
-        Object (
-            height_request: 76,
-            width_request: 76,
-            level: level,
-            margin: 12,
-            margin_bottom: 24
-        );
+        Object (level: level);
     }
 
     class construct {
@@ -32,7 +26,7 @@ public class GradeLabel : Gtk.Box {
     }
 
     construct {
-        var level = new Gtk.Label ("%s".printf (level)) {
+        var level = new Gtk.Label (level) {
             use_markup = true
         };
         level.get_style_context ().add_class (Granite.STYLE_CLASS_SMALL_LABEL);
