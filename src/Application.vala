@@ -4,15 +4,9 @@
  */
 
 public class Harvey : Gtk.Application {
-    public static GLib.Settings settings;
-
     public Harvey () {
         Object (application_id: "io.github.danirabbit.harvey",
         flags: ApplicationFlags.FLAGS_NONE);
-    }
-
-    static construct {
-        settings = new Settings ("io.github.danirabbit.harvey");
     }
 
     protected override void startup () {
