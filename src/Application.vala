@@ -18,6 +18,8 @@ public class Harvey : Gtk.Application {
     protected override void startup () {
         base.startup ();
 
+        Hdy.init ();
+
         Intl.setlocale (LocaleCategory.ALL, "");
         Intl.bindtextdomain (GETTEXT_PACKAGE, LOCALEDIR);
         Intl.bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
@@ -34,24 +36,6 @@ public class Harvey : Gtk.Application {
                 return true;
             })
         );
-    }
-
-    protected override void activate () {
-        if (get_windows ().length () > 0) {
-            get_windows ().data.present ();
-            return;
-        }
-
-        var app_window = new MainWindow (this);
-
-        var window_x = settings.get_int ("window-x");
-        var window_y = settings.get_int ("window-y");
-
-        if (window_x != -1 || window_y != -1) {
-            app_window.move (window_x, window_y);
-        }
-
-        app_window.show_all ();
 
         var quit_action = new SimpleAction ("quit", null);
 
@@ -62,15 +46,18 @@ public class Harvey : Gtk.Application {
         provider.load_from_resource ("io/github/danirabbit/harvey/Application.css");
         Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
-        quit_action.activate.connect (() => {
-            if (app_window != null) {
-                app_window.destroy ();
-            }
-        });
+        quit_action.activate.connect (quit);
+    }
+
+    protected override void activate () {
+        if (active_window == null) {
+            add_window (new MainWindow (this));
+        }
+
+        active_window.present ();
     }
 
     public static int main (string[] args) {
-        var app = new Harvey ();
-        return app.run (args);
+        return new Harvey ().run (args);
     }
 }
