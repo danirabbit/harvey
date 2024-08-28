@@ -1,11 +1,11 @@
-# Ossetian translations for com.github.danrabbit.harvey package.
-# Copyright (C) 2018 THE com.github.danrabbit.harvey'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the com.github.danrabbit.harvey package.
+# Ossetian translations for io.github.danirabbit.harvey package.
+# Copyright (C) 2018 THE io.github.danirabbit.harvey'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the io.github.danirabbit.harvey package.
 # Automatically generated, 2018.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: com.github.danrabbit.harvey\n"
+"Project-Id-Version: io.github.danirabbit.harvey\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-21 13:42-0700\n"
 "PO-Revision-Date: 2018-01-15 10:49-0800\n"

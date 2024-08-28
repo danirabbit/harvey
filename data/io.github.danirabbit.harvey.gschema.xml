@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schemalist>
-  <schema path="/com/github/danrabbit/harvey/"
-  id="com.github.danrabbit.harvey"
-  gettext-domain="com.github.danrabbit.harvey">
+  <schema path="/io/github/danirabbit/harvey/" id="io.github.danirabbit.harvey" gettext-domain="io.github.danirabbit.harvey">
     <key name="bg-color" type="s">
       <default>"#aedede"</default>
       <summary>Last valid background color</summary>
@@ -12,7 +10,7 @@
       <default>"#333"</default>
       <summary>Last valid foreground color</summary>
       <description>Last valid foreground color</description>
-    </key>   
+    </key>
   </schema>
 </schemalist>
 

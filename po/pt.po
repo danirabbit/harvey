@@ -1,11 +1,11 @@
-# Portuguese translations for com.github.danrabbit.harvey package.
-# Copyright (C) 2018 THE com.github.danrabbit.harvey'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the com.github.danrabbit.harvey package.
+# Portuguese translations for io.github.danirabbit.harvey package.
+# Copyright (C) 2018 THE io.github.danirabbit.harvey'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the io.github.danirabbit.harvey package.
 # André Barata <andretiagob@protonmail.com>, 2020.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: com.github.danrabbit.harvey\n"
+"Project-Id-Version: io.github.danirabbit.harvey\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-21 13:42-0700\n"
 "PO-Revision-Date: 2020-08-26 12:29+0100\n"
@@ -86,8 +86,8 @@ msgstr ""
 #~ msgid "Calculate and visualize color contrast"
 #~ msgstr "Calcule e visualize o contraste da cor"
 
-#~ msgid "com.github.danrabbit.harvey"
-#~ msgstr "com.github.danrabbit.harvey"
+#~ msgid "io.github.danirabbit.harvey"
+#~ msgstr "io.github.danirabbit.harvey"
 
 #~ msgid "contrast;color;"
 #~ msgstr "contraste;cor;"

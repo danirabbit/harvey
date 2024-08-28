@@ -1,11 +1,11 @@
-# Kalaallisut translations for com.github.danrabbit.harvey package.
-# Copyright (C) 2018 THE com.github.danrabbit.harvey'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the com.github.danrabbit.harvey package.
+# Kalaallisut translations for io.github.danirabbit.harvey package.
+# Copyright (C) 2018 THE io.github.danirabbit.harvey'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the io.github.danirabbit.harvey package.
 # Automatically generated, 2018.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: com.github.danrabbit.harvey\n"
+"Project-Id-Version: io.github.danirabbit.harvey\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-21 13:42-0700\n"
 "PO-Revision-Date: 2018-01-15 10:49-0800\n"
@@ -16,102 +16,102 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: data/com.github.danrabbit.harvey.appdata.xml.in:7
-#: data/com.github.danrabbit.harvey.desktop.in:3
+#: data/io.github.danirabbit.harvey.appdata.xml.in:7
+#: data/io.github.danirabbit.harvey.desktop.in:3
 msgid "Harvey"
 msgstr ""
 
-#: data/com.github.danrabbit.harvey.appdata.xml.in:8
+#: data/io.github.danirabbit.harvey.appdata.xml.in:8
 msgid "The hero that Gotham needs right now"
 msgstr ""
 
-#: data/com.github.danrabbit.harvey.appdata.xml.in:10
+#: data/io.github.danirabbit.harvey.appdata.xml.in:10
 msgid ""
 "Calculate and visualize color contrast. Harvey checks a given set of colors "
 "for WCAG contrast compliance."
 msgstr ""
 
-#: data/com.github.danrabbit.harvey.appdata.xml.in:12
+#: data/io.github.danirabbit.harvey.appdata.xml.in:12
 msgid "Pick colors from your display"
 msgstr ""
 
-#: data/com.github.danrabbit.harvey.appdata.xml.in:13
+#: data/io.github.danirabbit.harvey.appdata.xml.in:13
 msgid "See explanations for different grades on hover"
 msgstr ""
 
-#: data/com.github.danrabbit.harvey.appdata.xml.in:14
+#: data/io.github.danirabbit.harvey.appdata.xml.in:14
 msgid "Quit with the handy shortcut Ctrl + Q"
 msgstr ""
 
-#: data/com.github.danrabbit.harvey.appdata.xml.in:15
+#: data/io.github.danirabbit.harvey.appdata.xml.in:15
 msgid "Join the contrast rebellion"
 msgstr ""
 
-#: data/com.github.danrabbit.harvey.appdata.xml.in:24
+#: data/io.github.danirabbit.harvey.appdata.xml.in:24
 msgid "Odin update!"
 msgstr ""
 
-#: data/com.github.danrabbit.harvey.appdata.xml.in:26
+#: data/io.github.danirabbit.harvey.appdata.xml.in:26
 msgid "Update to latest libraries"
 msgstr ""
 
-#: data/com.github.danrabbit.harvey.appdata.xml.in:27
+#: data/io.github.danirabbit.harvey.appdata.xml.in:27
 msgid "Update categories"
 msgstr ""
 
-#: data/com.github.danrabbit.harvey.appdata.xml.in:28
-#: data/com.github.danrabbit.harvey.appdata.xml.in:39
+#: data/io.github.danirabbit.harvey.appdata.xml.in:28
+#: data/io.github.danirabbit.harvey.appdata.xml.in:39
 msgid "Code cleanups"
 msgstr ""
 
-#: data/com.github.danrabbit.harvey.appdata.xml.in:34
+#: data/io.github.danirabbit.harvey.appdata.xml.in:34
 msgid "Juno update!"
 msgstr ""
 
-#: data/com.github.danrabbit.harvey.appdata.xml.in:36
+#: data/io.github.danirabbit.harvey.appdata.xml.in:36
 msgid "Add a new A level"
 msgstr ""
 
-#: data/com.github.danrabbit.harvey.appdata.xml.in:37
+#: data/io.github.danirabbit.harvey.appdata.xml.in:37
 msgid "Show explanations for grades on hover"
 msgstr ""
 
-#: data/com.github.danrabbit.harvey.appdata.xml.in:38
+#: data/io.github.danirabbit.harvey.appdata.xml.in:38
 msgid "Live preview of color selector in main window"
 msgstr ""
 
-#: data/com.github.danrabbit.harvey.appdata.xml.in:45
+#: data/io.github.danirabbit.harvey.appdata.xml.in:45
 msgid "Add French and Spanish Translations"
 msgstr ""
 
-#: data/com.github.danrabbit.harvey.appdata.xml.in:51
+#: data/io.github.danirabbit.harvey.appdata.xml.in:51
 msgid "Add HiDPI icons support"
 msgstr ""
 
-#: data/com.github.danrabbit.harvey.appdata.xml.in:52
+#: data/io.github.danirabbit.harvey.appdata.xml.in:52
 msgid "RTL text layout support"
 msgstr ""
 
-#: data/com.github.danrabbit.harvey.appdata.xml.in:53
+#: data/io.github.danirabbit.harvey.appdata.xml.in:53
 msgid "Now with automated testing"
 msgstr ""
 
-#: data/com.github.danrabbit.harvey.appdata.xml.in:54
+#: data/io.github.danirabbit.harvey.appdata.xml.in:54
 msgid "Update to latest APIs; get ready for Juno"
 msgstr ""
 
-#: data/com.github.danrabbit.harvey.appdata.xml.in:94
+#: data/io.github.danirabbit.harvey.appdata.xml.in:94
 msgid "Daniel Foré"
 msgstr ""
 
-#: data/com.github.danrabbit.harvey.desktop.in:4
+#: data/io.github.danirabbit.harvey.desktop.in:4
 msgid "Calculate and visualize color contrast"
 msgstr ""
 
-#: data/com.github.danrabbit.harvey.desktop.in:6
-msgid "com.github.danrabbit.harvey"
+#: data/io.github.danirabbit.harvey.desktop.in:6
+msgid "io.github.danirabbit.harvey"
 msgstr ""
 
-#: data/com.github.danrabbit.harvey.desktop.in:7
+#: data/io.github.danirabbit.harvey.desktop.in:7
 msgid "contrast;color;"
 msgstr ""
