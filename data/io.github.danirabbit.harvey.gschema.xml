@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schemalist>
-  <schema path="/io/github/danirabbit/harvey/" id="io.github.danirabbit.harvey" gettext-domain="io.github.danirabbit.harvey">
+  <schema path="/io/github/danirabbit/harvey/"
+  id="io.github.danirabbit.harvey"
+  gettext-domain="io.github.danirabbit.harvey">
     <key name="bg-color" type="s">
       <default>"#aedede"</default>
       <summary>Last valid background color</summary>

@@ -3,16 +3,16 @@
  * SPDX-FileCopyrightText: 2017-2024 Danielle Foré (https://github.com/danirabbit)
  */
 
-public class GradeLabel : Gtk.Grid {
-    private Gtk.Image icon;
+public class GradeLabel : Gtk.Box {
+    private Gtk.Image image;
 
     public string level { get; construct; }
     public bool pass {
         set {
             if (value) {
-                icon.icon_name = "object-select-symbolic";
+                image.icon_name = "object-select-symbolic";
             } else {
-                icon.icon_name = "window-close-symbolic";
+                image.icon_name = "window-close-symbolic";
             }
         }
     }
@@ -21,26 +21,20 @@ public class GradeLabel : Gtk.Grid {
         Object (level: level);
     }
 
+    class construct {
+        set_css_name ("grade");
+    }
+
     construct {
-        var level = new Gtk.Label ("<small><b>%s</b></small>".printf (level)) {
-            margin_top = 20,
-            width_request = 76,
+        var level = new Gtk.Label (level) {
             use_markup = true
         };
+        level.add_css_class (Granite.STYLE_CLASS_SMALL_LABEL);
 
-        icon = new Gtk.Image () {
-            icon_name = "object-select-symbolic",
-            pixel_size = 24
-        };
+        image = new Gtk.Image.from_icon_name ("object-select-symbolic");
 
-        height_request = 76;
-        width_request = 76;
-        margin_top = 12;
-        margin_end = 12;
-        margin_bottom = 24;
-        margin_start = 12;
-        add_css_class ("grade");
-        attach (level, 0, 0);
-        attach (icon, 0, 1);
+        orientation = VERTICAL;
+        append (level);
+        append (image);
     }
 }

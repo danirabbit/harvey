@@ -4,15 +4,9 @@
  */
 
 public class Harvey : Gtk.Application {
-    public static GLib.Settings settings;
-
     public Harvey () {
         Object (application_id: "io.github.danirabbit.harvey",
         flags: ApplicationFlags.FLAGS_NONE);
-    }
-
-    static construct {
-        settings = new Settings ("io.github.danirabbit.harvey");
     }
 
     protected override void startup () {
@@ -46,17 +40,14 @@ public class Harvey : Gtk.Application {
     }
 
     protected override void activate () {
-        if (get_windows ().length () > 0) {
-            get_windows ().data.present ();
-            return;
+        if (active_window == null) {
+            add_window (new MainWindow (this));
         }
 
-        var app_window = new MainWindow (this);
-        app_window.present ();
+        active_window.present ();
     }
 
     public static int main (string[] args) {
-        var app = new Harvey ();
-        return app.run (args);
+        return new Harvey ().run (args);
     }
 }

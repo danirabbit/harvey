@@ -7,10 +7,6 @@ public class MainWindow : Gtk.Window {
     private const string RESULTS_CSS = """
         @define-color colorForeground %s;
         @define-color colorBackground %s;
-
-        .results {
-            transition: all 250ms ease-in-out;
-        }
     """;
 
     private Gdk.RGBA gdk_color;
@@ -21,79 +17,78 @@ public class MainWindow : Gtk.Window {
     private GradeLabel aa_level;
     private GradeLabel aaa_level;
 
+    private GLib.Settings settings;
+
     private string? prev_foreground_entry = null;
     private string? prev_background_entry = null;
 
     public MainWindow (Gtk.Application application) {
-        Object (
-            application: application,
-            height_request: 500,
-            icon_name: "io.github.danirabbit.harvey",
-            resizable: false,
-            title: _("Harvey"),
-            width_request: 700
-        );
+        Object (application: application);
     }
 
     construct {
-        var fg_label = new Gtk.Label (_("Foreground Color")) {
-            xalign = 0
-        };
-        fg_label.add_css_class ("h4");
+        settings = new Settings ("io.github.danirabbit.harvey");
 
-        var bg_label = new Gtk.Label (_("Background Color")) {
-            margin_top = 12,
-            xalign = 0
-        };
-        bg_label.add_css_class ("h4");
+        var fg_label = new Granite.HeaderLabel (_("Foreground Color"));
+
+        var bg_label = new Granite.HeaderLabel (_("Background Color"));
 
         fg_entry = new Gtk.Entry () {
             placeholder_text = "#333",
-            text = Harvey.settings.get_string ("fg-color")
+            secondary_icon_name = "media-eq-symbolic",
+            text = settings.get_string ("fg-color")
         };
-        fg_entry.set_icon_from_icon_name (Gtk.EntryIconPosition.SECONDARY, "media-eq-symbolic");
 
         bg_entry = new Gtk.Entry () {
             placeholder_text = "rgb (110, 200, 230)",
-            text = Harvey.settings.get_string ("bg-color")
+            secondary_icon_name = "media-eq-symbolic",
+            text = settings.get_string ("bg-color"),
         };
-        bg_entry.set_icon_from_icon_name (Gtk.EntryIconPosition.SECONDARY, "media-eq-symbolic");
 
-        var input_grid = new Gtk.Grid () {
+        var input_box = new Gtk.Box (VERTICAL, 0) {
             margin_top = 12,
             margin_end = 12,
             margin_bottom = 12,
             margin_start = 12,
             vexpand = true
         };
-        input_grid.attach (fg_label, 0, 0);
-        input_grid.attach (fg_entry, 0, 1);
-        input_grid.attach (bg_label, 0, 2);
-        input_grid.attach (bg_entry, 0, 3);
+        input_box.append (fg_label);
+        input_box.append (fg_entry);
+        input_box.append (bg_label);
+        input_box.append (bg_entry);
 
         results_label = new Gtk.Label ("12:1") {
             hexpand = true,
             vexpand = true,
             selectable = true,
-            halign = Gtk.Align.CENTER,
-            valign = Gtk.Align.CENTER
+            valign = CENTER,
+            halign = CENTER
         };
-        results_label.add_css_class ("h1");
+        results_label.add_css_class(Granite.STYLE_CLASS_H1_LABEL);
 
         a_level = new GradeLabel ("WCAG A") {
-            halign = Gtk.Align.CENTER
+            halign = CENTER,
+            tooltip_markup = "<big><b>%s</b></big>\n%s".printf (
+                _("3:1"),
+                _("The minimum level recommended by ISO-9241-3 and ANSI-HFES-100-1988 for standard text and vision")
+            )
         };
-        a_level.tooltip_markup = "<big><b>%s</b></big>\n%s".printf (_("3:1"), _("The minimum level recommended by ISO-9241-3 and ANSI-HFES-100-1988 for standard text and vision"));
 
         aa_level = new GradeLabel ("WCAG AA") {
-            halign = Gtk.Align.CENTER
+            halign = CENTER,
+            tooltip_markup = "<big><b>%s</b></big>\n%s".printf (
+                _("4.5:1"),
+                _("Compensates for the loss in contrast that results from moderately low visual acuity, color deficiencies, or aging.")
+            )
         };
-        aa_level.tooltip_markup = "<big><b>%s</b></big>\n%s".printf (_("4.5:1"), _("Compensates for the loss in contrast that results from moderately low visual acuity, color deficiencies, or aging."));
 
         aaa_level = new GradeLabel ("WCAG AAA") {
-            halign = Gtk.Align.CENTER
+            halign = CENTER,
+            tooltip_markup = "<big><b>%s</b></big>\n%s".printf (
+                _("7:1"),
+                _("Compensates for the loss in contrast sensitivity usually experienced by users with about 20/80 vision. People with more than this degree of vision loss usually use assistive technologies.")
+            )
         };
-        aaa_level.tooltip_markup = "<big><b>%s</b></big>\n%s".printf (_("7:1"), _("Compensates for the loss in contrast sensitivity usually experienced by users with about 20/80 vision. People with more than this degree of vision loss usually use assistive technologies."));
 
         var results_grid = new Gtk.Grid () {
             row_spacing = 12
@@ -114,7 +109,7 @@ public class MainWindow : Gtk.Window {
 
         var grid = new Gtk.Grid ();
         grid.attach (input_header, 0, 0);
-        grid.attach (input_grid, 0, 1);
+        grid.attach (input_box, 0, 1);
         grid.attach (results_grid, 1, 0, 1, 2);
 
         var window_handle = new Gtk.WindowHandle () {
@@ -122,6 +117,10 @@ public class MainWindow : Gtk.Window {
         };
 
         child = window_handle;
+        default_height = 500;
+        default_width = 700;
+        icon_name = "io.github.danirabbit.harvey";
+        title = _("Harvey");
 
         // We need to hide the title area for the split headerbar
         var null_title = new Gtk.Grid () {
@@ -196,18 +195,15 @@ public class MainWindow : Gtk.Window {
     }
 
     private void style_results_pane (string fg_color, string bg_color) {
+            var colored_css = RESULTS_CSS.printf (fg_color, bg_color);
+
             var provider = new Gtk.CssProvider ();
-            // try {
-            //     var colored_css = RESULTS_CSS.printf (fg_color, bg_color);
-            //     provider.load_from_data (colored_css, colored_css.length);
+            provider.load_from_string (colored_css);
 
-            //     Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-            // } catch (GLib.Error e) {
-            //     return;
-            // }
+            Gtk.StyleContext.add_provider_for_display (Gdk.Display.get_default (), provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
-            Harvey.settings.set_string ("fg-color", fg_entry.text);
-            Harvey.settings.set_string ("bg-color", bg_entry.text);
+            settings.set_string ("fg-color", fg_entry.text);
+            settings.set_string ("bg-color", bg_entry.text);
 
             gdk_color.parse (fg_color);
             var pango_fg_luminance = get_luminance (gdk_color);

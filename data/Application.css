@@ -17,11 +17,20 @@
 * Boston, MA 02110-1301 USA
 */
 
-.grade {
+grade {
     color: #fff;
     background-color: alpha(#333, 0.9);
     border-radius: 50%;
     box-shadow: 0 1px shade(@colorBackground, 1.15);
+    min-height: 76px;
+    min-width: 76px;
+    margin: 12px;
+    -gtk-icon-size: 24px;
+}
+
+grade label {
+    font-weight: bold;
+    margin-top: 20px;
 }
 
 .results {
@@ -31,12 +40,16 @@
         inset 1px 0 0 0 shade(@colorBackground, 1.07),
         inset -1px 0 0 0 shade(@colorBackground, 1.07),
         inset 0 -1px 0 0 shade(@colorBackground, 1.1);
+    padding: 12px;
+    transition: all 250ms ease-in-out;
 }
 
 .results:dir(ltr) {
+    border-bottom-right-radius: 3px;
     border-left: solid 1px shade(@colorBackground, 0.8);
 }
 
 .results:dir(rtl) {
+    border-bottom-left-radius: 3px;
     border-right: solid 1px shade(@colorBackground, 0.8);
 }
