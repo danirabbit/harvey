@@ -19,26 +19,26 @@
 
 .grade {
     color: #fff;
-    background-color: alpha (#333, 0.9);
+    background-color: alpha(#333, 0.9);
     border-radius: 50%;
-    box-shadow: 0 1px shade (@colorBackground, 1.15);
+    box-shadow: 0 1px shade(@colorBackground, 1.15);
 }
 
 .results {
     background-color: @colorBackground;
     color: @colorForeground;
     box-shadow:
-        inset 1px 0 0 0 shade (@colorBackground, 1.07),
-        inset -1px 0 0 0 shade (@colorBackground, 1.07),
-        inset 0 -1px 0 0 shade (@colorBackground, 1.1);
+        inset 1px 0 0 0 shade(@colorBackground, 1.07),
+        inset -1px 0 0 0 shade(@colorBackground, 1.07),
+        inset 0 -1px 0 0 shade(@colorBackground, 1.1);
 }
 
 .results:dir(ltr) {
     border-bottom-right-radius: 3px;
-    border-left: solid 1px shade (@colorBackground, 0.8);
+    border-left: solid 1px shade(@colorBackground, 0.8);
 }
 
 .results:dir(rtl) {
     border-bottom-left-radius: 3px;
-    border-right: solid 1px shade (@colorBackground, 0.8);
+    border-right: solid 1px shade(@colorBackground, 0.8);
 }
