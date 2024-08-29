@@ -121,12 +121,8 @@ public class MainWindow : Gtk.Window {
         default_width = 700;
         icon_name = "io.github.danirabbit.harvey";
         title = _("Harvey");
-
         // We need to hide the title area for the split headerbar
-        var null_title = new Gtk.Grid () {
-            visible = false
-        };
-        set_titlebar (null_title);
+        titlebar = new Gtk.Grid () { visible = false };
 
         fg_entry.icon_press.connect ((pos) => {
             if (pos == Gtk.EntryIconPosition.SECONDARY) {
