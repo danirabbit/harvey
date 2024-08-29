@@ -17,15 +17,11 @@ public class MainWindow : Gtk.Window {
     private GradeLabel aa_level;
     private GradeLabel aaa_level;
 
-    private GLib.Settings settings;
-
     public MainWindow (Gtk.Application application) {
         Object (application: application);
     }
 
     construct {
-        settings = new Settings ("io.github.danirabbit.harvey");
-
         var fg_label = new Granite.HeaderLabel (_("Foreground Color"));
 
         var bg_label = new Granite.HeaderLabel (_("Background Color"));
@@ -33,15 +29,18 @@ public class MainWindow : Gtk.Window {
         fg_entry = new Gtk.Entry () {
             hexpand = true,
             placeholder_text = "#333",
-            secondary_icon_name = "media-eq-symbolic",
-            text = settings.get_string ("fg-color")
+            secondary_icon_name = "media-eq-symbolic"
+        };
+
+        var swap_button = new Gtk.Button.from_icon_name ("object-flip-horizontal-symbolic") {
+            tooltip_text = _("Swap foreground and background colors"),
+            valign = END
         };
 
         bg_entry = new Gtk.Entry () {
             hexpand = true,
             placeholder_text = "rgb (110, 200, 230)",
-            secondary_icon_name = "media-eq-symbolic",
-            text = settings.get_string ("bg-color"),
+            secondary_icon_name = "media-eq-symbolic"
         };
 
         var fg_box = new Gtk.Box (VERTICAL, 0);
@@ -55,6 +54,7 @@ public class MainWindow : Gtk.Window {
         var inputs_box = new Gtk.Box (HORIZONTAL, 0);
         inputs_box.add_css_class ("inputs");
         inputs_box.append (fg_box);
+        inputs_box.append (swap_button);
         inputs_box.append (bg_box);
 
         results_label = new Gtk.Label ("12:1") {
@@ -120,24 +120,32 @@ public class MainWindow : Gtk.Window {
         title = _("Harvey");
 
         fg_entry.icon_press.connect ((pos) => {
-            if (pos == Gtk.EntryIconPosition.SECONDARY) {
+            if (pos == SECONDARY) {
                 on_entry_icon_press.begin (fg_entry);
             }
         });
 
-        fg_entry.changed.connect (() => {
-            on_entry_changed ();
-        });
+        fg_entry.changed.connect (on_entry_changed);
 
         bg_entry.icon_press.connect ((pos) => {
-            if (pos == Gtk.EntryIconPosition.SECONDARY) {
+            if (pos == SECONDARY) {
                 on_entry_icon_press.begin (bg_entry);
             }
         });
 
-        bg_entry.changed.connect (() => {
-            on_entry_changed ();
+        bg_entry.changed.connect (on_entry_changed);
+
+        swap_button.clicked.connect (() => {
+            var fg_text = fg_entry.text;
+            var bg_text = bg_entry.text;
+
+            fg_entry.text = bg_text;
+            bg_entry.text = fg_text;
         });
+
+        var settings = new Settings ("io.github.danirabbit.harvey");
+        settings.bind ("fg-color", fg_entry, "text", DEFAULT);
+        settings.bind ("bg-color", bg_entry, "text", DEFAULT);
 
         style_results_pane (fg_entry.text, bg_entry.text);
     }
@@ -165,50 +173,46 @@ public class MainWindow : Gtk.Window {
     }
 
     private void style_results_pane (string fg_color, string bg_color) {
-            var colored_css = RESULTS_CSS.printf (fg_color, bg_color);
+        var colored_css = RESULTS_CSS.printf (fg_color, bg_color);
 
-            var provider = new Gtk.CssProvider ();
-            provider.load_from_string (colored_css);
+        var provider = new Gtk.CssProvider ();
+        provider.load_from_string (colored_css);
 
-            Gtk.StyleContext.add_provider_for_display (Gdk.Display.get_default (), provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+        Gtk.StyleContext.add_provider_for_display (Gdk.Display.get_default (), provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
-            settings.set_string ("fg-color", fg_entry.text);
-            settings.set_string ("bg-color", bg_entry.text);
+        gdk_color.parse (fg_color);
+        var pango_fg_luminance = get_luminance (gdk_color);
 
-            gdk_color.parse (fg_color);
-            var pango_fg_luminance = get_luminance (gdk_color);
+        gdk_color.parse (bg_color);
+        var pango_bg_luminance = get_luminance (gdk_color);
 
-            gdk_color.parse (bg_color);
-            var pango_bg_luminance = get_luminance (gdk_color);
+        double contrast_ratio;
 
-            double contrast_ratio;
+        if (pango_bg_luminance > pango_fg_luminance) {
+            contrast_ratio = (pango_bg_luminance + 0.05) / (pango_fg_luminance + 0.05);
+        } else {
+            contrast_ratio = (pango_fg_luminance + 0.05) / (pango_bg_luminance + 0.05);
+        }
 
-            if (pango_bg_luminance > pango_fg_luminance) {
-                contrast_ratio = (pango_bg_luminance + 0.05) / (pango_fg_luminance + 0.05);
-            } else {
-                contrast_ratio = (pango_fg_luminance + 0.05) / (pango_bg_luminance + 0.05);
-            }
+        results_label.label = "%.1f:1".printf (contrast_ratio);
 
-            results_label.label = "%.1f:1".printf (contrast_ratio);
+        if (contrast_ratio >= 3) {
+            a_level.pass = true;
+        } else {
+            a_level.pass = false;
+        }
 
-            if (contrast_ratio >= 3) {
-                a_level.pass = true;
-            } else {
-                a_level.pass = false;
-            }
+        if (contrast_ratio >= 4.5) {
+            aa_level.pass = true;
+        } else {
+            aa_level.pass = false;
+        }
 
-            if (contrast_ratio >= 4.5) {
-                aa_level.pass = true;
-            } else {
-                aa_level.pass = false;
-            }
-
-            if (contrast_ratio >= 7) {
-                aaa_level.pass = true;
-            } else {
-                aaa_level.pass = false;
-            }
-
+        if (contrast_ratio >= 7) {
+            aaa_level.pass = true;
+        } else {
+            aaa_level.pass = false;
+        }
     }
 
     private double get_luminance (Gdk.RGBA color) {
