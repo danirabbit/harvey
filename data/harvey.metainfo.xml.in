@@ -19,8 +19,11 @@
   </description>
 
   <screenshots>
-    <screenshot type="default">
-      <image>https://raw.githubusercontent.com/danirabbit/harvey/main/data/screenshot.png</image>
+    <screenshot type="default" environment="pantheon">
+      <image scale="2">https://raw.githubusercontent.com/danirabbit/harvey/main/data/screenshot.png</image>
+    </screenshot>
+    <screenshot type="default" environment="pantheon:dark">
+      <image scale="2">https://raw.githubusercontent.com/danirabbit/harvey/main/data/screenshot-dark.png</image>
     </screenshot>
   </screenshots>
 
