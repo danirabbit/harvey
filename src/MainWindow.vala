@@ -19,9 +19,6 @@ public class MainWindow : Gtk.Window {
 
     private GLib.Settings settings;
 
-    private string? prev_foreground_entry = null;
-    private string? prev_background_entry = null;
-
     public MainWindow (Gtk.Application application) {
         Object (application: application);
     }
@@ -126,7 +123,7 @@ public class MainWindow : Gtk.Window {
 
         fg_entry.icon_press.connect ((pos) => {
             if (pos == Gtk.EntryIconPosition.SECONDARY) {
-                on_entry_icon_press (fg_entry);
+                on_entry_icon_press.begin (fg_entry);
             }
         });
 
@@ -136,7 +133,7 @@ public class MainWindow : Gtk.Window {
 
         bg_entry.icon_press.connect ((pos) => {
             if (pos == Gtk.EntryIconPosition.SECONDARY) {
-                on_entry_icon_press (bg_entry);
+                on_entry_icon_press.begin (bg_entry);
             }
         });
 
@@ -147,41 +144,20 @@ public class MainWindow : Gtk.Window {
         style_results_pane (fg_entry.text, bg_entry.text);
     }
 
-    private void on_entry_icon_press (Gtk.Entry entry) {
+    private async void on_entry_icon_press (Gtk.Entry entry) {
         gdk_color.parse (entry.text);
 
-        var dialog = new Gtk.ColorChooserDialog ("", this) {
-            deletable = false,
-            rgba = gdk_color,
-            show_editor = true
+        var dialog = new Gtk.ColorDialog () {
+            modal = true,
+            with_alpha = false
         };
-        dialog.present ();
 
-
-        dialog.color_activated.connect (() => {
-            if (entry == fg_entry && prev_foreground_entry == null) {
-                prev_foreground_entry = entry.text;
-            } else if (entry == bg_entry && prev_background_entry == null) {
-                prev_background_entry = entry.text;
-            }
-
-           entry.text = dialog.rgba.to_string ();
-        });
-
-        // if (dialog.run () == Gtk.ResponseType.OK) {
-        //     entry.text = widget.current_rgba.to_string ();
-        // } else {
-        //     if (prev_foreground_entry != null) {
-        //         fg_entry.text = prev_foreground_entry;
-        //     }
-
-        //     if (prev_background_entry != null) {
-        //         bg_entry.text = prev_background_entry;
-        //     }
-        // }
-
-        prev_foreground_entry = null;
-        prev_background_entry = null;
+        try {
+            var rgba = yield dialog.choose_rgba (this, gdk_color, null);
+            entry.text = rgba.to_string ();
+        } catch (Error e) {
+            critical ("failed to get color");
+        }
     }
 
     private void on_entry_changed () {
