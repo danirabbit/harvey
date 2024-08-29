@@ -1,4 +1,4 @@
-<img align="left" width="64" height="64" src="data/icons/64/io.github.danirabbit.harvey.svg">
+<img align="left" width="64" height="64" src="data/icons/64.svg">
 <h1 class="rich-diff-level-zero">Harvey</h1>
 
 The hero that Gotham needs. Harvey is a color contrast checker. It checks a given set of colors for WCAG contrast compliance.
