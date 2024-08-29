@@ -31,33 +31,31 @@ public class MainWindow : Gtk.Window {
         var bg_label = new Granite.HeaderLabel (_("Background Color"));
 
         fg_entry = new Gtk.Entry () {
+            hexpand = true,
             placeholder_text = "#333",
             secondary_icon_name = "media-eq-symbolic",
             text = settings.get_string ("fg-color")
         };
 
         bg_entry = new Gtk.Entry () {
+            hexpand = true,
             placeholder_text = "rgb (110, 200, 230)",
             secondary_icon_name = "media-eq-symbolic",
             text = settings.get_string ("bg-color"),
         };
 
-        var start_windowcontrols = new Gtk.WindowControls (START);
+        var fg_box = new Gtk.Box (VERTICAL, 0);
+        fg_box.append (fg_label);
+        fg_box.append (fg_entry);
 
-        var input_box = new Gtk.Box (VERTICAL, 0);
-        input_box.append (fg_label);
-        input_box.append (fg_entry);
-        input_box.append (bg_label);
-        input_box.append (bg_entry);
+        var bg_box = new Gtk.Box (VERTICAL, 0);
+        bg_box.append (bg_label);
+        bg_box.append (bg_entry);
 
-        var start_box = new Gtk.Box (VERTICAL, 0);
-        start_box.add_css_class ("start");
-        start_box.append (start_windowcontrols);
-        start_box.append (input_box);
-
-        var end_windowcontrols = new Gtk.WindowControls (END) {
-            halign = END
-        };
+        var inputs_box = new Gtk.Box (HORIZONTAL, 0);
+        inputs_box.add_css_class ("inputs");
+        inputs_box.append (fg_box);
+        inputs_box.append (bg_box);
 
         results_label = new Gtk.Label ("12:1") {
             hexpand = true,
@@ -97,29 +95,29 @@ public class MainWindow : Gtk.Window {
         levels_box.append (aaa_level);
 
         var results_box = new Gtk.Box (VERTICAL, 0);
+        results_box.add_css_class ("results");
         results_box.append (results_label);
         results_box.append (levels_box);
 
-        var end_box = new Gtk.Box (VERTICAL, 0);
-        end_box.add_css_class ("end");
-        end_box.append (end_windowcontrols);
-        end_box.append (results_box);
-
-        var main_box = new Gtk.Box (HORIZONTAL, 0);
-        main_box.append (start_box);
-        main_box.append (end_box);
+        var main_box = new Gtk.Box (VERTICAL, 0);
+        main_box.append (inputs_box);
+        main_box.append (results_box);
 
         var window_handle = new Gtk.WindowHandle () {
             child = main_box
         };
 
+        titlebar = new Gtk.HeaderBar () {
+            show_title_buttons = true,
+            title_widget = new Gtk.Grid () { visible = false }
+        };
+        titlebar.add_css_class (Granite.STYLE_CLASS_FLAT);
+
         child = window_handle;
-        default_height = 500;
-        default_width = 700;
+        default_height = 300;
+        default_width = 400;
         icon_name = "io.github.danirabbit.harvey";
         title = _("Harvey");
-        // We need to hide the title area for the split headerbar
-        titlebar = new Gtk.Grid () { visible = false };
 
         fg_entry.icon_press.connect ((pos) => {
             if (pos == Gtk.EntryIconPosition.SECONDARY) {

@@ -17,19 +17,25 @@
 * Boston, MA 02110-1301 USA
 */
 
-windowcontrols {
-    margin: 0.5em;
+box.inputs,
+box.results {
+    padding: 1em;
+    border-spacing: 1em;
 }
 
-box.start > box,
-box.end > box {
-    margin: 1em;
-    margin-top: 0.5em;
+box.inputs {
+    padding-top: 0;
+}
+
+box.inputs > box {
     border-spacing: 0.5em;
 }
 
-box.end {
+box.results {
     background-color: @colorBackground;
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+    border-top: solid 1px shade(@colorBackground, 0.8);
     color: @colorForeground;
     box-shadow:
         inset 0 1px 0 0 shade(@colorBackground, 1.1),
@@ -39,19 +45,7 @@ box.end {
     transition: all 250ms ease-in-out;
 }
 
-box.end:dir(ltr) {
-    border-bottom-right-radius: 6px;
-    border-top-right-radius: 6px;
-    border-left: solid 1px shade(@colorBackground, 0.8);
-}
-
-box.end:dir(rtl) {
-    border-bottom-left-radius: 6px;
-    border-top-left-radius: 6px;
-    border-right: solid 1px shade(@colorBackground, 0.8);
-}
-
-box.end box.horizontal {
+box.results box.horizontal {
     border-spacing: 1em;
 }
 
