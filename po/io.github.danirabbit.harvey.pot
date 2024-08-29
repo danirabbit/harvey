@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.danirabbit.harvey\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-29 19:06+0000\n"
+"POT-Creation-Date: 2024-08-29 19:23+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,12 +17,16 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/MainWindow.vala:29
+#: src/MainWindow.vala:25
 msgid "Foreground Color"
 msgstr ""
 
-#: src/MainWindow.vala:31
+#: src/MainWindow.vala:27
 msgid "Background Color"
+msgstr ""
+
+#: src/MainWindow.vala:36
+msgid "Swap foreground and background colors"
 msgstr ""
 
 #: src/MainWindow.vala:71
