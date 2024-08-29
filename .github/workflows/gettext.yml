@@ -24,7 +24,7 @@ jobs:
     - name: Clone repository
       uses: actions/checkout@v4
       with:
-        token: ${{ secrets.GITHUB_TOKEN }}
+        token: ${{ secrets.GIT_USER_TOKEN }}
 
     - name: Configure Git
       run: |
