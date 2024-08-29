@@ -34,5 +34,5 @@ jobs:
       with:
         manifest-path: 'io.github.danirabbit.harvey.yml'
       env:
-        GIT_USER_NAME: "elementaryBot"
-        GIT_USER_EMAIL: "builds@elementary.io"
+        GIT_USER_NAME: "github-actions[bot]"
+        GIT_USER_EMAIL: "github-actions[bot]@users.noreply.github.com"
