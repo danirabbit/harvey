@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2017-2024 Danielle Foré <danielle@elementary.io> -->
+<component type="desktop-application">
+  <id>io.github.danirabbit.harvey</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <translation type="gettext">io.github.danirabbit.harvey</translation>
+
+  <name>Harvey</name>
+  <summary>Calculate and visualize color contrast</summary>
+  <description>
+    <p>The hero that Gotham needs right now. Harvey checks a given set of colors for WCAG contrast compliance.</p>
+    <ul>
+      <li>Pick colors from your display</li>
+      <li>See explanations for different grades on hover</li>
+      <li>Quit with the handy shortcut Ctrl + Q</li>
+      <li>Join the contrast rebellion</li>
+    </ul>
+  </description>
+
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/danirabbit/harvey/main/data/screenshot.png</image>
+    </screenshot>
+  </screenshots>
+
+  <branding>
+    <color type="primary">#aedede</color>
+  </branding>
+  <custom>
+    <value key="x-appcenter-color-primary">#aedede</value>
+    <value key="x-appcenter-suggested-price">3</value>
+    <value key="x-appcenter-stripe">pk_live_wyW2wqcVA8mBoKajo3Q62iQs</value>
+  </custom>
+
+  <content_rating type="oars-1.1" />
+
+  <provides>
+    <binary>io.github.danirabbit.harvey</binary>
+    <id>io.github.danirabbit.harvey.desktop</id>
+  </provides>
+  <launchable type="desktop-id">io.github.danirabbit.harvey.desktop</launchable>
+
+  <recommends>
+    <display_length compare="ge">400</display_length>
+  </recommends>
+  <supports>
+    <control>pointing</control>
+    <control>keyboard</control>
+    <control>touch</control>
+  </supports>
+
+  <url type="bugtracker">https://github.com/danirabbit/harvey/issues</url>
+  <url type="contribute">https://github.com/danirabbit/harvey/contribute</url>
+  <url type="donation">https://github.com/sponsors/danirabbit</url>
+  <url type="help">https://github.com/danirabbit/harvey/discussions/categories/q-a</url>
+  <url type="homepage">https://github.com/danirabbit</url>
+  <url type="translate">https://github.com/danirabbit/harvey/tree/main/po</url>
+  <url type="vcs-browser">https://github.com/danirabbit/harvey</url>
+
+  <developer id="io.github.danirabbit">
+    <name>Danielle Foré</name>
+  </developer>
+
+  <releases>
+    <release version="1.0.2" date="2021-07-21">
+      <description>
+        <p>Add Portuguese translations</p>
+      </description>
+    </release>
+
+    <release version="1.0.1" date="2021-05-12">
+      <description>
+        <p>Odin update!</p>
+        <ul>
+          <li>Update to latest libraries</li>
+          <li>Update categories</li>
+          <li>Code cleanups</li>
+        </ul>
+      </description>
+    </release>
+
+    <release version="1.0.0" date="2018-07-3">
+      <description>
+        <p>Juno update!</p>
+        <ul>
+          <li>Add a new A level</li>
+          <li>Show explanations for grades on hover</li>
+          <li>Live preview of color selector in main window</li>
+          <li>Code cleanups</li>
+        </ul>
+      </description>
+    </release>
+
+    <release version="0.1.8" date="2018-01-15">
+      <description>
+        <p>Add French and Spanish Translations</p>
+      </description>
+    </release>
+
+    <release version="0.1.7" date="2017-10-19">
+      <description>
+        <ul>
+          <li>Add HiDPI icons support</li>
+          <li>RTL text layout support</li>
+          <li>Now with automated testing</li>
+          <li>Update to latest APIs; get ready for Juno</li>
+        </ul>
+      </description>
+    </release>
+  </releases>
+</component>
