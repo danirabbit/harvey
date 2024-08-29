@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.danirabbit.harvey\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-21 13:42-0700\n"
+"POT-Creation-Date: 2024-08-29 13:06-0700\n"
 "PO-Revision-Date: 2018-01-15 10:49-0800\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -18,102 +18,116 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
 
-#: data/io.github.danirabbit.harvey.appdata.xml.in:7
-#: data/io.github.danirabbit.harvey.desktop.in:3
+#: data/harvey.metainfo.xml.in:9 data/harvey.desktop.in:3
 msgid "Harvey"
 msgstr ""
 
-#: data/io.github.danirabbit.harvey.appdata.xml.in:8
-msgid "The hero that Gotham needs right now"
-msgstr ""
-
-#: data/io.github.danirabbit.harvey.appdata.xml.in:10
-msgid ""
-"Calculate and visualize color contrast. Harvey checks a given set of colors "
-"for WCAG contrast compliance."
-msgstr ""
-
-#: data/io.github.danirabbit.harvey.appdata.xml.in:12
-msgid "Pick colors from your display"
-msgstr ""
-
-#: data/io.github.danirabbit.harvey.appdata.xml.in:13
-msgid "See explanations for different grades on hover"
-msgstr ""
-
-#: data/io.github.danirabbit.harvey.appdata.xml.in:14
-msgid "Quit with the handy shortcut Ctrl + Q"
-msgstr ""
-
-#: data/io.github.danirabbit.harvey.appdata.xml.in:15
-msgid "Join the contrast rebellion"
-msgstr ""
-
-#: data/io.github.danirabbit.harvey.appdata.xml.in:24
-msgid "Odin update!"
-msgstr ""
-
-#: data/io.github.danirabbit.harvey.appdata.xml.in:26
-msgid "Update to latest libraries"
-msgstr ""
-
-#: data/io.github.danirabbit.harvey.appdata.xml.in:27
-msgid "Update categories"
-msgstr ""
-
-#: data/io.github.danirabbit.harvey.appdata.xml.in:28
-#: data/io.github.danirabbit.harvey.appdata.xml.in:39
-msgid "Code cleanups"
-msgstr ""
-
-#: data/io.github.danirabbit.harvey.appdata.xml.in:34
-msgid "Juno update!"
-msgstr ""
-
-#: data/io.github.danirabbit.harvey.appdata.xml.in:36
-msgid "Add a new A level"
-msgstr ""
-
-#: data/io.github.danirabbit.harvey.appdata.xml.in:37
-msgid "Show explanations for grades on hover"
-msgstr ""
-
-#: data/io.github.danirabbit.harvey.appdata.xml.in:38
-msgid "Live preview of color selector in main window"
-msgstr ""
-
-#: data/io.github.danirabbit.harvey.appdata.xml.in:45
-msgid "Add French and Spanish Translations"
-msgstr ""
-
-#: data/io.github.danirabbit.harvey.appdata.xml.in:51
-msgid "Add HiDPI icons support"
-msgstr ""
-
-#: data/io.github.danirabbit.harvey.appdata.xml.in:52
-msgid "RTL text layout support"
-msgstr ""
-
-#: data/io.github.danirabbit.harvey.appdata.xml.in:53
-msgid "Now with automated testing"
-msgstr ""
-
-#: data/io.github.danirabbit.harvey.appdata.xml.in:54
-msgid "Update to latest APIs; get ready for Juno"
-msgstr ""
-
-#: data/io.github.danirabbit.harvey.appdata.xml.in:94
-msgid "Daniel Foré"
-msgstr ""
-
-#: data/io.github.danirabbit.harvey.desktop.in:4
+#: data/harvey.metainfo.xml.in:10 data/harvey.desktop.in:4
 msgid "Calculate and visualize color contrast"
 msgstr ""
 
-#: data/io.github.danirabbit.harvey.desktop.in:6
-msgid "io.github.danirabbit.harvey"
+#: data/harvey.metainfo.xml.in:12
+msgid ""
+"The hero that Gotham needs right now. Harvey checks a given set of colors "
+"for WCAG contrast compliance."
 msgstr ""
 
-#: data/io.github.danirabbit.harvey.desktop.in:7
+#: data/harvey.metainfo.xml.in:14
+msgid "Pick colors from your display"
+msgstr ""
+
+#: data/harvey.metainfo.xml.in:15
+msgid "See explanations for different grades on hover"
+msgstr ""
+
+#: data/harvey.metainfo.xml.in:16
+msgid "Quit with the handy shortcut Ctrl + Q"
+msgstr ""
+
+#: data/harvey.metainfo.xml.in:17
+msgid "Join the contrast rebellion"
+msgstr ""
+
+#: data/harvey.metainfo.xml.in:65
+msgid "Danielle Foré"
+msgstr ""
+
+#: data/harvey.metainfo.xml.in:71
+msgid "Harvey got a little redesign and a fresh new icon!"
+msgstr ""
+
+#: data/harvey.metainfo.xml.in:73
+msgid "Redesigned the app icon to fit in with modern platform conventions"
+msgstr ""
+
+#: data/harvey.metainfo.xml.in:74
+msgid "A new resizable layout"
+msgstr ""
+
+#: data/harvey.metainfo.xml.in:75
+msgid "Swap foreground and background colors"
+msgstr ""
+
+#: data/harvey.metainfo.xml.in:76
+msgid "Scales with your text size"
+msgstr ""
+
+#: data/harvey.metainfo.xml.in:83
+msgid "Add Portuguese translations"
+msgstr ""
+
+#: data/harvey.metainfo.xml.in:89
+msgid "Odin update!"
+msgstr ""
+
+#: data/harvey.metainfo.xml.in:91
+msgid "Update to latest libraries"
+msgstr ""
+
+#: data/harvey.metainfo.xml.in:92
+msgid "Update categories"
+msgstr ""
+
+#: data/harvey.metainfo.xml.in:93 data/harvey.metainfo.xml.in:105
+msgid "Code cleanups"
+msgstr ""
+
+#: data/harvey.metainfo.xml.in:100
+msgid "Juno update!"
+msgstr ""
+
+#: data/harvey.metainfo.xml.in:102
+msgid "Add a new A level"
+msgstr ""
+
+#: data/harvey.metainfo.xml.in:103
+msgid "Show explanations for grades on hover"
+msgstr ""
+
+#: data/harvey.metainfo.xml.in:104
+msgid "Live preview of color selector in main window"
+msgstr ""
+
+#: data/harvey.metainfo.xml.in:112
+msgid "Add French and Spanish Translations"
+msgstr ""
+
+#: data/harvey.metainfo.xml.in:119
+msgid "Add HiDPI icons support"
+msgstr ""
+
+#: data/harvey.metainfo.xml.in:120
+msgid "RTL text layout support"
+msgstr ""
+
+#: data/harvey.metainfo.xml.in:121
+msgid "Now with automated testing"
+msgstr ""
+
+#: data/harvey.metainfo.xml.in:122
+msgid "Update to latest APIs; get ready for Juno"
+msgstr ""
+
+#: data/harvey.desktop.in:7
 msgid "contrast;color;"
 msgstr ""

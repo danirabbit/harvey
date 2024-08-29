@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-29 13:00-0700\n"
+"POT-Creation-Date: 2024-08-29 13:06-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -52,58 +52,78 @@ msgid "Danielle Foré"
 msgstr ""
 
 #: data/harvey.metainfo.xml.in:71
+msgid "Harvey got a little redesign and a fresh new icon!"
+msgstr ""
+
+#: data/harvey.metainfo.xml.in:73
+msgid "Redesigned the app icon to fit in with modern platform conventions"
+msgstr ""
+
+#: data/harvey.metainfo.xml.in:74
+msgid "A new resizable layout"
+msgstr ""
+
+#: data/harvey.metainfo.xml.in:75
+msgid "Swap foreground and background colors"
+msgstr ""
+
+#: data/harvey.metainfo.xml.in:76
+msgid "Scales with your text size"
+msgstr ""
+
+#: data/harvey.metainfo.xml.in:83
 msgid "Add Portuguese translations"
 msgstr ""
 
-#: data/harvey.metainfo.xml.in:77
+#: data/harvey.metainfo.xml.in:89
 msgid "Odin update!"
 msgstr ""
 
-#: data/harvey.metainfo.xml.in:79
+#: data/harvey.metainfo.xml.in:91
 msgid "Update to latest libraries"
 msgstr ""
 
-#: data/harvey.metainfo.xml.in:80
+#: data/harvey.metainfo.xml.in:92
 msgid "Update categories"
 msgstr ""
 
-#: data/harvey.metainfo.xml.in:81 data/harvey.metainfo.xml.in:93
+#: data/harvey.metainfo.xml.in:93 data/harvey.metainfo.xml.in:105
 msgid "Code cleanups"
 msgstr ""
 
-#: data/harvey.metainfo.xml.in:88
+#: data/harvey.metainfo.xml.in:100
 msgid "Juno update!"
 msgstr ""
 
-#: data/harvey.metainfo.xml.in:90
+#: data/harvey.metainfo.xml.in:102
 msgid "Add a new A level"
 msgstr ""
 
-#: data/harvey.metainfo.xml.in:91
+#: data/harvey.metainfo.xml.in:103
 msgid "Show explanations for grades on hover"
 msgstr ""
 
-#: data/harvey.metainfo.xml.in:92
+#: data/harvey.metainfo.xml.in:104
 msgid "Live preview of color selector in main window"
 msgstr ""
 
-#: data/harvey.metainfo.xml.in:100
+#: data/harvey.metainfo.xml.in:112
 msgid "Add French and Spanish Translations"
 msgstr ""
 
-#: data/harvey.metainfo.xml.in:107
+#: data/harvey.metainfo.xml.in:119
 msgid "Add HiDPI icons support"
 msgstr ""
 
-#: data/harvey.metainfo.xml.in:108
+#: data/harvey.metainfo.xml.in:120
 msgid "RTL text layout support"
 msgstr ""
 
-#: data/harvey.metainfo.xml.in:109
+#: data/harvey.metainfo.xml.in:121
 msgid "Now with automated testing"
 msgstr ""
 
-#: data/harvey.metainfo.xml.in:110
+#: data/harvey.metainfo.xml.in:122
 msgid "Update to latest APIs; get ready for Juno"
 msgstr ""
 

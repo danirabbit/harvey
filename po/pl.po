@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.danirabbit.harvey\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-21 13:42-0700\n"
+"POT-Creation-Date: 2024-08-29 13:06-0700\n"
 "PO-Revision-Date: 2018-01-15 10:49-0800\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -18,45 +18,49 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
 
-#: src/MainWindow.vala:33
-msgid "Harvey"
-msgstr ""
-
-#: src/MainWindow.vala:41
+#: src/MainWindow.vala:25
 msgid "Foreground Color"
 msgstr ""
 
-#: src/MainWindow.vala:45
+#: src/MainWindow.vala:27
 msgid "Background Color"
 msgstr ""
 
-#: src/MainWindow.vala:79
+#: src/MainWindow.vala:36
+msgid "Swap foreground and background colors"
+msgstr ""
+
+#: src/MainWindow.vala:71
 msgid "3:1"
 msgstr ""
 
-#: src/MainWindow.vala:79
+#: src/MainWindow.vala:72
 msgid ""
 "The minimum level recommended by ISO-9241-3 and ANSI-HFES-100-1988 for "
 "standard text and vision"
 msgstr ""
 
-#: src/MainWindow.vala:83
+#: src/MainWindow.vala:78
 msgid "4.5:1"
 msgstr ""
 
-#: src/MainWindow.vala:83
+#: src/MainWindow.vala:79
 msgid ""
 "Compensates for the loss in contrast that results from moderately low visual "
 "acuity, color deficiencies, or aging."
 msgstr ""
 
-#: src/MainWindow.vala:87
+#: src/MainWindow.vala:85
 msgid "7:1"
 msgstr ""
 
-#: src/MainWindow.vala:87
+#: src/MainWindow.vala:86
 msgid ""
 "Compensates for the loss in contrast sensitivity usually experienced by "
 "users with about 20/80 vision. People with more than this degree of vision "
 "loss usually use assistive technologies."
+msgstr ""
+
+#: src/MainWindow.vala:120
+msgid "Harvey"
 msgstr ""

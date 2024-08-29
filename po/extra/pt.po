@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.danirabbit.harvey\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-21 13:42-0700\n"
+"POT-Creation-Date: 2024-08-29 13:06-0700\n"
 "PO-Revision-Date: 2020-08-26 12:29+0100\n"
 "Last-Translator: André Barata <andretiagob@protonmail.com>\n"
 "Language-Team: none\n"
@@ -18,107 +18,129 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 2.4.1\n"
 
-#: data/io.github.danirabbit.harvey.appdata.xml.in:7
-#: data/io.github.danirabbit.harvey.desktop.in:3
+#: data/harvey.metainfo.xml.in:9 data/harvey.desktop.in:3
 msgid "Harvey"
 msgstr "Harvey"
 
-#: data/io.github.danirabbit.harvey.appdata.xml.in:8
-msgid "The hero that Gotham needs right now"
-msgstr "O herói que Gotham precisa neste momento"
+#: data/harvey.metainfo.xml.in:10 data/harvey.desktop.in:4
+msgid "Calculate and visualize color contrast"
+msgstr "Calcule e visualize o contraste da cor"
 
-#: data/io.github.danirabbit.harvey.appdata.xml.in:10
+#: data/harvey.metainfo.xml.in:12
+#, fuzzy
 msgid ""
-"Calculate and visualize color contrast. Harvey checks a given set of colors "
+"The hero that Gotham needs right now. Harvey checks a given set of colors "
 "for WCAG contrast compliance."
 msgstr ""
 "Calcule e visualize o contraste da cor. O Harvey verifica a conformidade de "
 "contraste das WCAG num determinado conjunto de cores."
 
-#: data/io.github.danirabbit.harvey.appdata.xml.in:12
+#: data/harvey.metainfo.xml.in:14
 msgid "Pick colors from your display"
 msgstr "Selecione as cores do seu ecrã"
 
-#: data/io.github.danirabbit.harvey.appdata.xml.in:13
+#: data/harvey.metainfo.xml.in:15
 msgid "See explanations for different grades on hover"
 msgstr ""
 
-#: data/io.github.danirabbit.harvey.appdata.xml.in:14
+#: data/harvey.metainfo.xml.in:16
 msgid "Quit with the handy shortcut Ctrl + Q"
 msgstr "Saía com o atalho prático Ctrl + Q"
 
-#: data/io.github.danirabbit.harvey.appdata.xml.in:15
+#: data/harvey.metainfo.xml.in:17
 msgid "Join the contrast rebellion"
 msgstr "Junte-se à rebelião do contraste"
 
-#: data/io.github.danirabbit.harvey.appdata.xml.in:24
+#: data/harvey.metainfo.xml.in:65
+#, fuzzy
+msgid "Danielle Foré"
+msgstr "Daniel Foré"
+
+#: data/harvey.metainfo.xml.in:71
+msgid "Harvey got a little redesign and a fresh new icon!"
+msgstr ""
+
+#: data/harvey.metainfo.xml.in:73
+msgid "Redesigned the app icon to fit in with modern platform conventions"
+msgstr ""
+
+#: data/harvey.metainfo.xml.in:74
+msgid "A new resizable layout"
+msgstr ""
+
+#: data/harvey.metainfo.xml.in:75
+msgid "Swap foreground and background colors"
+msgstr ""
+
+#: data/harvey.metainfo.xml.in:76
+msgid "Scales with your text size"
+msgstr ""
+
+#: data/harvey.metainfo.xml.in:83
+msgid "Add Portuguese translations"
+msgstr ""
+
+#: data/harvey.metainfo.xml.in:89
 msgid "Odin update!"
 msgstr ""
 
-#: data/io.github.danirabbit.harvey.appdata.xml.in:26
+#: data/harvey.metainfo.xml.in:91
 msgid "Update to latest libraries"
 msgstr ""
 
-#: data/io.github.danirabbit.harvey.appdata.xml.in:27
+#: data/harvey.metainfo.xml.in:92
 msgid "Update categories"
 msgstr ""
 
-#: data/io.github.danirabbit.harvey.appdata.xml.in:28
-#: data/io.github.danirabbit.harvey.appdata.xml.in:39
+#: data/harvey.metainfo.xml.in:93 data/harvey.metainfo.xml.in:105
 msgid "Code cleanups"
 msgstr ""
 
-#: data/io.github.danirabbit.harvey.appdata.xml.in:34
+#: data/harvey.metainfo.xml.in:100
 msgid "Juno update!"
 msgstr ""
 
-#: data/io.github.danirabbit.harvey.appdata.xml.in:36
+#: data/harvey.metainfo.xml.in:102
 msgid "Add a new A level"
 msgstr ""
 
-#: data/io.github.danirabbit.harvey.appdata.xml.in:37
+#: data/harvey.metainfo.xml.in:103
 msgid "Show explanations for grades on hover"
 msgstr ""
 
-#: data/io.github.danirabbit.harvey.appdata.xml.in:38
+#: data/harvey.metainfo.xml.in:104
 msgid "Live preview of color selector in main window"
 msgstr ""
 
-#: data/io.github.danirabbit.harvey.appdata.xml.in:45
+#: data/harvey.metainfo.xml.in:112
 msgid "Add French and Spanish Translations"
 msgstr ""
 
-#: data/io.github.danirabbit.harvey.appdata.xml.in:51
+#: data/harvey.metainfo.xml.in:119
 msgid "Add HiDPI icons support"
 msgstr ""
 
-#: data/io.github.danirabbit.harvey.appdata.xml.in:52
+#: data/harvey.metainfo.xml.in:120
 msgid "RTL text layout support"
 msgstr ""
 
-#: data/io.github.danirabbit.harvey.appdata.xml.in:53
+#: data/harvey.metainfo.xml.in:121
 msgid "Now with automated testing"
 msgstr ""
 
-#: data/io.github.danirabbit.harvey.appdata.xml.in:54
+#: data/harvey.metainfo.xml.in:122
 msgid "Update to latest APIs; get ready for Juno"
 msgstr ""
 
-#: data/io.github.danirabbit.harvey.appdata.xml.in:94
-msgid "Daniel Foré"
-msgstr "Daniel Foré"
-
-#: data/io.github.danirabbit.harvey.desktop.in:4
-msgid "Calculate and visualize color contrast"
-msgstr "Calcule e visualize o contraste da cor"
-
-#: data/io.github.danirabbit.harvey.desktop.in:6
-msgid "io.github.danirabbit.harvey"
-msgstr "io.github.danirabbit.harvey"
-
-#: data/io.github.danirabbit.harvey.desktop.in:7
+#: data/harvey.desktop.in:7
 msgid "contrast;color;"
 msgstr "contraste;cor;"
+
+#~ msgid "The hero that Gotham needs right now"
+#~ msgstr "O herói que Gotham precisa neste momento"
+
+#~ msgid "io.github.danirabbit.harvey"
+#~ msgstr "io.github.danirabbit.harvey"
 
 #~ msgid "Foreground Color"
 #~ msgstr "Cor em Primeiro Plano"
