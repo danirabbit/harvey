@@ -64,7 +64,7 @@ public class MainWindow : Gtk.Window {
             valign = CENTER,
             halign = CENTER
         };
-        results_label.add_css_class(Granite.STYLE_CLASS_H1_LABEL);
+        results_label.add_css_class (Granite.STYLE_CLASS_H1_LABEL);
 
         a_level = new GradeLabel ("WCAG A") {
             halign = CENTER,
