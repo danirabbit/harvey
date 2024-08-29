@@ -3,7 +3,7 @@
  * SPDX-FileCopyrightText: 2017-2024 Danielle Foré (https://github.com/danirabbit)
  */
 
-public class MainWindow : Hdy.Window {
+public class MainWindow : Gtk.Window {
     private const string RESULTS_CSS = """
         @define-color colorForeground %s;
         @define-color colorBackground %s;
@@ -18,9 +18,6 @@ public class MainWindow : Hdy.Window {
     private GradeLabel aaa_level;
 
     private GLib.Settings settings;
-
-    private string? prev_foreground_entry = null;
-    private string? prev_background_entry = null;
 
     public MainWindow (Gtk.Application application) {
         Object (application: application);
@@ -52,10 +49,10 @@ public class MainWindow : Hdy.Window {
             margin_start = 12,
             vexpand = true
         };
-        input_box.add (fg_label);
-        input_box.add (fg_entry);
-        input_box.add (bg_label);
-        input_box.add (bg_entry);
+        input_box.append (fg_label);
+        input_box.append (fg_entry);
+        input_box.append (bg_label);
+        input_box.append (bg_entry);
 
         results_label = new Gtk.Label ("12:1") {
             hexpand = true,
@@ -64,7 +61,7 @@ public class MainWindow : Hdy.Window {
             valign = CENTER,
             halign = CENTER
         };
-        results_label.get_style_context ().add_class (Granite.STYLE_CLASS_H1_LABEL);
+        results_label.add_css_class (Granite.STYLE_CLASS_H1_LABEL);
 
         a_level = new GradeLabel ("WCAG A") {
             halign = CENTER,
@@ -93,28 +90,26 @@ public class MainWindow : Hdy.Window {
         var results_grid = new Gtk.Grid () {
             row_spacing = 12
         };
-        results_grid.get_style_context ().add_class ("results");
+        results_grid.add_css_class ("results");
         results_grid.attach (results_label, 0, 0, 3, 1);
         results_grid.attach (a_level, 0, 1);
         results_grid.attach (aa_level, 1, 1);
         results_grid.attach (aaa_level, 2, 1);
 
-        var input_header = new Hdy.HeaderBar () {
+        var input_header = new Gtk.HeaderBar () {
            decoration_layout = "close:",
-           show_close_button = true
+           show_title_buttons = true
         };
-
-        var input_header_context = input_header.get_style_context ();
-        input_header_context.add_class ("input-header");
-        input_header_context.add_class ("default-decoration");
-        input_header_context.add_class (Gtk.STYLE_CLASS_FLAT);
+        input_header.add_css_class ("input-header");
+        input_header.add_css_class ("default-decoration");
+        input_header.add_css_class ("flat");
 
         var grid = new Gtk.Grid ();
         grid.attach (input_header, 0, 0);
         grid.attach (input_box, 0, 1);
         grid.attach (results_grid, 1, 0, 1, 2);
 
-        var window_handle = new Hdy.WindowHandle () {
+        var window_handle = new Gtk.WindowHandle () {
             child = grid
         };
 
@@ -123,12 +118,12 @@ public class MainWindow : Hdy.Window {
         default_width = 700;
         icon_name = "io.github.danirabbit.harvey";
         title = _("Harvey");
+        // We need to hide the title area for the split headerbar
+        titlebar = new Gtk.Grid () { visible = false };
 
-        show_all ();
-
-        fg_entry.icon_press.connect ((pos, event) => {
+        fg_entry.icon_press.connect ((pos) => {
             if (pos == Gtk.EntryIconPosition.SECONDARY) {
-                on_entry_icon_press (fg_entry);
+                on_entry_icon_press.begin (fg_entry);
             }
         });
 
@@ -136,9 +131,9 @@ public class MainWindow : Hdy.Window {
             on_entry_changed ();
         });
 
-        bg_entry.icon_press.connect ((pos, event) => {
+        bg_entry.icon_press.connect ((pos) => {
             if (pos == Gtk.EntryIconPosition.SECONDARY) {
-                on_entry_icon_press (bg_entry);
+                on_entry_icon_press.begin (bg_entry);
             }
         });
 
@@ -149,42 +144,20 @@ public class MainWindow : Hdy.Window {
         style_results_pane (fg_entry.text, bg_entry.text);
     }
 
-    private void on_entry_icon_press (Gtk.Entry entry) {
+    private async void on_entry_icon_press (Gtk.Entry entry) {
         gdk_color.parse (entry.text);
 
-        var dialog = new Gtk.ColorSelectionDialog ("");
-        dialog.deletable = false;
-        dialog.transient_for = this;
+        var dialog = new Gtk.ColorDialog () {
+            modal = true,
+            with_alpha = false
+        };
 
-        unowned Gtk.ColorSelection widget = dialog.get_color_selection ();
-        widget.current_rgba = gdk_color;
-
-        widget.color_changed.connect (() => {
-            if (entry == fg_entry && prev_foreground_entry == null) {
-                prev_foreground_entry = entry.text;
-            } else if (entry == bg_entry && prev_background_entry == null) {
-                prev_background_entry = entry.text;
-            }
-
-           entry.text = widget.current_rgba.to_string ();
-        });
-
-        if (dialog.run () == Gtk.ResponseType.OK) {
-            entry.text = widget.current_rgba.to_string ();
-        } else {
-            if (prev_foreground_entry != null) {
-                fg_entry.text = prev_foreground_entry;
-            }
-
-            if (prev_background_entry != null) {
-                bg_entry.text = prev_background_entry;
-            }
+        try {
+            var rgba = yield dialog.choose_rgba (this, gdk_color, null);
+            entry.text = rgba.to_string ();
+        } catch (Error e) {
+            critical ("failed to get color");
         }
-
-        prev_foreground_entry = null;
-        prev_background_entry = null;
-
-        dialog.close ();
     }
 
     private void on_entry_changed () {
@@ -194,15 +167,12 @@ public class MainWindow : Hdy.Window {
     }
 
     private void style_results_pane (string fg_color, string bg_color) {
-            var provider = new Gtk.CssProvider ();
-            try {
-                var colored_css = RESULTS_CSS.printf (fg_color, bg_color);
-                provider.load_from_data (colored_css, colored_css.length);
+            var colored_css = RESULTS_CSS.printf (fg_color, bg_color);
 
-                Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-            } catch (GLib.Error e) {
-                return;
-            }
+            var provider = new Gtk.CssProvider ();
+            provider.load_from_string (colored_css);
+
+            Gtk.StyleContext.add_provider_for_display (Gdk.Display.get_default (), provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
             settings.set_string ("fg-color", fg_entry.text);
             settings.set_string ("bg-color", bg_entry.text);

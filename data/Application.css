@@ -25,6 +25,7 @@ grade {
     min-height: 76px;
     min-width: 76px;
     margin: 12px;
+    -gtk-icon-size: 24px;
 }
 
 grade label {

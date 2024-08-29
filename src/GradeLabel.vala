@@ -29,12 +29,12 @@ public class GradeLabel : Gtk.Box {
         var level = new Gtk.Label (level) {
             use_markup = true
         };
-        level.get_style_context ().add_class (Granite.STYLE_CLASS_SMALL_LABEL);
+        level.add_css_class (Granite.STYLE_CLASS_SMALL_LABEL);
 
-        image = new Gtk.Image.from_icon_name ("object-select-symbolic", LARGE_TOOLBAR);
+        image = new Gtk.Image.from_icon_name ("object-select-symbolic");
 
         orientation = VERTICAL;
-        add (level);
-        add (image);
+        append (level);
+        append (image);
     }
 }

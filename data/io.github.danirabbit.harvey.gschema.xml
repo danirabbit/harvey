@@ -12,7 +12,7 @@
       <default>"#333"</default>
       <summary>Last valid foreground color</summary>
       <description>Last valid foreground color</description>
-    </key>   
+    </key>
   </schema>
 </schemalist>
 
