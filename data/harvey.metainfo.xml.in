@@ -66,6 +66,18 @@
   </developer>
 
   <releases>
+    <release version="2.0.0" date="2024-08-29">
+      <description>
+        <p>Harvey got a little redesign and a fresh new icon!</p>
+        <ul>
+          <li>Redesigned the app icon to fit in with modern platform conventions</li>
+          <li>A new resizable layout</li>
+          <li>Swap foreground and background colors</li>
+          <li>Scales with your text size</li>
+        </ul>
+      </description>
+    </release>
+
     <release version="1.0.2" date="2021-07-21">
       <description>
         <p>Add Portuguese translations</p>
