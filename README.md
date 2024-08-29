@@ -9,21 +9,14 @@ The hero that Gotham needs. Harvey is a color contrast checker. It checks a give
 
 ## Building, Testing, and Installation
 
+Run `flatpak-builder` to configure the build environment, download dependencies, build, and install
 
-You'll need the following dependencies to build:
-* libgranite-dev (>= 5.4.0)
-* libgtk-3-dev
-* libhandy-1-dev (>= 0.90.0)
-* meson
-* valac
+```bash
+    flatpak-builder build io.github.danirabbit.harvey.yml --user --install --force-clean --install-deps-from=appcenter
+```
 
-Run `meson build` to configure the build environment and then change to the build directory and run `ninja test` to build and run automated tests
+Then execute with
 
-    meson build --prefix=/usr 
-    cd build
-    ninja test
-
-To install, use `ninja install`, then execute with `io.github.danirabbit.harvey`
-
-    sudo ninja install
-    io.github.danirabbit.harvey
+```bash
+    flatpak run io.github.danirabbit.harvey
+```
