@@ -42,17 +42,22 @@ public class MainWindow : Gtk.Window {
             text = settings.get_string ("bg-color"),
         };
 
-        var input_box = new Gtk.Box (VERTICAL, 0) {
-            margin_top = 12,
-            margin_end = 12,
-            margin_bottom = 12,
-            margin_start = 12,
-            vexpand = true
-        };
+        var start_windowcontrols = new Gtk.WindowControls (START);
+
+        var input_box = new Gtk.Box (VERTICAL, 0);
         input_box.append (fg_label);
         input_box.append (fg_entry);
         input_box.append (bg_label);
         input_box.append (bg_entry);
+
+        var start_box = new Gtk.Box (VERTICAL, 0);
+        start_box.add_css_class ("start");
+        start_box.append (start_windowcontrols);
+        start_box.append (input_box);
+
+        var end_windowcontrols = new Gtk.WindowControls (END) {
+            halign = END
+        };
 
         results_label = new Gtk.Label ("12:1") {
             hexpand = true,
@@ -64,7 +69,6 @@ public class MainWindow : Gtk.Window {
         results_label.add_css_class (Granite.STYLE_CLASS_H1_LABEL);
 
         a_level = new GradeLabel ("WCAG A") {
-            halign = CENTER,
             tooltip_markup = "<big><b>%s</b></big>\n%s".printf (
                 _("3:1"),
                 _("The minimum level recommended by ISO-9241-3 and ANSI-HFES-100-1988 for standard text and vision")
@@ -72,7 +76,6 @@ public class MainWindow : Gtk.Window {
         };
 
         aa_level = new GradeLabel ("WCAG AA") {
-            halign = CENTER,
             tooltip_markup = "<big><b>%s</b></big>\n%s".printf (
                 _("4.5:1"),
                 _("Compensates for the loss in contrast that results from moderately low visual acuity, color deficiencies, or aging.")
@@ -80,37 +83,34 @@ public class MainWindow : Gtk.Window {
         };
 
         aaa_level = new GradeLabel ("WCAG AAA") {
-            halign = CENTER,
             tooltip_markup = "<big><b>%s</b></big>\n%s".printf (
                 _("7:1"),
                 _("Compensates for the loss in contrast sensitivity usually experienced by users with about 20/80 vision. People with more than this degree of vision loss usually use assistive technologies.")
             )
         };
 
-        var results_grid = new Gtk.Grid () {
-            row_spacing = 12
+        var levels_box = new Gtk.Box (HORIZONTAL, 0) {
+            halign = CENTER
         };
-        results_grid.add_css_class ("results");
-        results_grid.attach (results_label, 0, 0, 3, 1);
-        results_grid.attach (a_level, 0, 1);
-        results_grid.attach (aa_level, 1, 1);
-        results_grid.attach (aaa_level, 2, 1);
+        levels_box.append (a_level);
+        levels_box.append (aa_level);
+        levels_box.append (aaa_level);
 
-        var input_header = new Gtk.HeaderBar () {
-           decoration_layout = "close:",
-           show_title_buttons = true
-        };
-        input_header.add_css_class ("input-header");
-        input_header.add_css_class ("default-decoration");
-        input_header.add_css_class ("flat");
+        var results_box = new Gtk.Box (VERTICAL, 0);
+        results_box.append (results_label);
+        results_box.append (levels_box);
 
-        var grid = new Gtk.Grid ();
-        grid.attach (input_header, 0, 0);
-        grid.attach (input_box, 0, 1);
-        grid.attach (results_grid, 1, 0, 1, 2);
+        var end_box = new Gtk.Box (VERTICAL, 0);
+        end_box.add_css_class ("end");
+        end_box.append (end_windowcontrols);
+        end_box.append (results_box);
+
+        var main_box = new Gtk.Box (HORIZONTAL, 0);
+        main_box.append (start_box);
+        main_box.append (end_box);
 
         var window_handle = new Gtk.WindowHandle () {
-            child = grid
+            child = main_box
         };
 
         child = window_handle;
